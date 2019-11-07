@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+      <div id="di"></div>
+      <button id="btn">STOP</button>
+      <script type="text/javascript">
+      /*	function setText(){
+      		document.getElementById('di').textContent +=" hello";
+      	}
+      	setInterval(setText,2000);*/
+
+      var intervalID=setInterval(() => {
+      		document.getElementById('di').textContent +=" hello";
+      	},2000);
+
+        function clrtime(){
+     	 	clearInterval(intervalID);
+     	 }
+     	 document.getElementById('btn').addEventListener('click',clrtime);
+      </script>
+</body>
+</html>

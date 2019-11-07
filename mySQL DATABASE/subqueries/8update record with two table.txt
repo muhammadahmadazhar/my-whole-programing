@@ -1,0 +1,2 @@
+update duplicate2emp set sal=sal+
+(select avg(sal) from emp);

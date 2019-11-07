@@ -1,0 +1,9 @@
+SELECT last_name,salary,NVL(commission_pct,0),(salary*12)+(NVL(commission_pct,0)) FROM employees;
+
+SELECT last_name,salary,commission_pct,(salary*12)+(NVL(commission_pct,0)) an_salary FROM employees;
+
+SELECT last_name,salary,commission_pct,NVL2(commission_pct,'sal+comm','sal') FROM employees WHERE department_id IN(50,80);
+
+
+
+SELECT first_name,LENGTH(first_name),last_name,LENGTH(last_name),NULLIF(LENGTH(first_name),LENGTH(last_name)) FROM employees;

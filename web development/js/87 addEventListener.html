@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>js</title>
+</head>
+<body>
+     <button id="mybtn">click me</button>
+     <button id="mybtn1">click</button>
+     <script>
+        function show(){
+        alert("clicked");}
+
+        
+        var btn=document.getElementById("mybtn");
+        btn.addEventListener("click", show);
+        
+        //adding multiple handler to one
+        function disp1(){
+        alert("clicked 1");}
+        function disp2(){
+        alert("clicked 2");}
+        var btn1=document.getElementById("mybtn1");
+        btn1.addEventListener("click",disp1);
+        btn1.addEventListener("click",disp2);
+     </script>
+</body>
+</html>

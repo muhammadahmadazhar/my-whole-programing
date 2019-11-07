@@ -1,0 +1,19 @@
+GRANT select ON hr.employees TO batman;
+
+give multiple privileges to a single user
+GRANT select,insert,delete,index,references ON hr.employees TO batman;
+GRANT ALL ON hr.employees TO batman;
+
+grant privilege to column level also
+GRANT update(first_name) ON hr.employees TO batman;
+GRANT insert(first_name) ON hr.employees TO batman;
+
+give privilege to a user so he give  same privileg to other user also
+(WITH GRANT OPTION) this is a flag option
+GRANT update ON hr.employees TO batman WITH GRANT OPTION;
+
+now we are goin to take back all privileges
+REVOKE ALL ON hr.employees FROM batman;
+
+priveleges are
+SELECT,INSERT,UPDATE,DELETE,REFERENCES,ALTER,INDEX,ALL

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Window object</title>
+</head>
+<body>
+     <h1>Window object</h1>
+     <button id="mybtn">open page in new window</button>
+     <br>
+     <button id="mybtn1">open page in self window</button>
+     <br>
+     <button id="mybtn2">open page in new small window</button>
+     <br>
+     <button id="mybtn3">open page in new small window</button>
+     <br>
+     <button id="cloj">close new small window</button>
+     <script type="text/javascript">
+     	var newWindow=window.open("","_blank","width=400,height=400");
+     	    newWindow.document.write("i am new window");
+     	function op(){
+     		window.open("http://www.facebook.com","_blank");
+     	}
+     	function op1(){
+     		window.open("http://www.facebook.com","_self");
+     	}
+     	function op2(){
+     		window.open("http://www.facebook.com","_blank","width=400,height=400,scrollbars=no");
+     	}
+     	function op3(){
+     		window.open("","_blank","width=400,height=400").document.write("I am new windw");
+     	}
+     	function cl(){
+     		newWindow.document.close();
+     		//we need to close document before window is close otherwise it opens again and again
+     		newWindow.close();
+     	}
+      document.getElementById("mybtn").addEventListener("click",op);
+      document.getElementById("mybtn1").addEventListener("click",op1);
+      document.getElementById("mybtn2").addEventListener("click",op2);
+      document.getElementById("mybtn3").addEventListener("click",op3);
+
+      document.getElementById("cloj").addEventListener("click",cl);
+
+     </script>
+</body>
+</html>

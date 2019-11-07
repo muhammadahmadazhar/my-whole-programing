@@ -1,0 +1,7 @@
+select job 
+from emp 
+union all
+select job 
+from duplicate1emp;
+
+/* union all gives all values from jobs of two table

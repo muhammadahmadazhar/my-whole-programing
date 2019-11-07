@@ -1,0 +1,3 @@
+SELECT last_name AS name,commission_pct AS  comm FROM employees;
+
+SELECT last_name "name", salary*12 "anual salary" FROM employees;

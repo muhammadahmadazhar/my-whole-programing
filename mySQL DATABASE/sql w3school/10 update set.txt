@@ -1,0 +1,2 @@
+USE business;
+UPDATE emp SET ename='ahmad',job='developer' WHERE id='14';

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1508611647 source:d:\c++ programs\objected oriented c++\#38 list stl\main.cpp
+	<iostream>
+	<list>
+

@@ -1,0 +1,36 @@
+from django.http import HttpResponse
+from django.shortcuts import render
+
+def index(request):
+    return render(request,'index.html')
+
+def analyze(request):
+    djtext=request.GET.get('text','default')
+    removepunc=request.GET.get('removepunc','off')
+    print(djtext)
+    print(removepunc)
+    punctuations='''"$%^&*£!'''
+    analyzed=""
+    for char in djtext:
+        if char not in punctuations:
+             analyzed=analyzed+char
+    params={'purpose':'Removed Punctuations','analyzed_text':analyzed}
+    return render(request,'analyze.html',params)
+
+URL PATTERNS
+path('',views.index, name='index'),
+    path('analyze',views.analyze, name='ana'),
+
+
+index.html
+<h1>welcome to the text analyzer.enter your text below</h1>
+     <form action="/analyze" method="get">
+         <textarea name="text" style="margin: 0px; width: 678px; height: 60px;"></textarea> <br>
+         <input type="checkbox" name="removepunc">Remove Punctuation <br>
+         <button type="submit">Analyze Text</button>
+
+analyze.html
+<h1>Your analyzed text {{ purpose}} </h1>
+     <p>{{ analyzed_text}}</p>
+
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body ><!--onload="alert('window opened');"*-->
+	<div id="di"></div>
+     <script type="text/javascript">
+     	window.onload=function () {
+     		document.getElementById('di').textContent +='hello world';
+     	} 
+     	 
+     	function show(){
+     	    document.getElementById('di').textContent +=' this is a modern way to add window event';	
+     	}
+         window.addEventListener('load',show);
+     </script> 
+</body>
+</html>

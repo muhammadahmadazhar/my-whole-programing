@@ -1,0 +1,5 @@
+pycharm shortcut keys
+ctrl [ to move left
+ctrl ] to move right
+ctrl d change all instance at once F2
+ctrl / comment 

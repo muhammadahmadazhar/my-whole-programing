@@ -1,0 +1,4 @@
+select count(empno),job
+from emp
+group by job
+order by count(empno);

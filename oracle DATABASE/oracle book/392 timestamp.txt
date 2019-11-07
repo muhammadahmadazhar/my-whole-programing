@@ -1,0 +1,12 @@
+CREATE TABLE dept(
+dno NUMBER(2) CONSTRAINT d_no_pk PRIMARY KEY,
+dname VARCHAR(15),
+hdate TIMESTAMP DEFAULT SYSDATE);
+
+INSERT INTO dept(
+dno,dname,hdate)
+VALUES(1,'ahmad',DEFAULT);
+
+SELECT * FROM dept;
+
+DROP TABLE dept;

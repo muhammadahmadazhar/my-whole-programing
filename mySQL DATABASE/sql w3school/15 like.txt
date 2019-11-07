@@ -1,0 +1,13 @@
+SELECT * FROM emp WHERE ename LIKE 'a%';
+
+SELECT * FROM `emp` WHERE ename LIKE '%s';
+
+SELECT * FROM emp WHERE ename LIKE 'a%s';
+
+SELECT * FROM emp WHERE ename LIKE '%ll%';
+
+// l in the second position 
+SELECT * FROM emp WHERE ename LIKE '_L%';
+
+// starts with a and string is 3 char long
+SELECT * FROM emp WHERE ename LIKE 'a_%_%';

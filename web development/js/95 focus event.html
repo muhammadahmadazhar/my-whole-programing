@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Focus Event</h1>
+     <label>Name</label>
+     <div id="mydiv" style="width: 300px; height: 100px; background-color: green; padding: 10px">
+     	<input type="text" name="Name" id="mytext">
+     </div>
+     <script type="text/javascript">
+     	var txt=document.getElementById("mytext");
+     	function orange(e){
+     		txt.style.backgroundColor="orange";
+     	}
+     	function white(e){
+     		txt.style.backgroundColor="white";
+     	}
+     	txt.addEventListener("focus",orange);
+     	txt.addEventListener("blur",white);
+     </script>
+</body>
+</html>

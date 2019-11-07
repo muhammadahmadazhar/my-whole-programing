@@ -1,0 +1,23 @@
+INSERT INTO departments(
+department_id,department_name,manager_id,location_id)
+VALUES (500,'PUBLIC',100,1700);
+
+IMPLILCIT METHOD
+INSERT INTO departments(
+department_id,department_name)
+VALUES (500,'PUBLIC');
+
+EXPLICIT METHOD
+INSERT INTO departments
+VALUES (500,'',NULL,1700);
+
+INSERTING SPECIAL VALUES
+INSERT INTO employees(
+employee_id,first_name,last_name,email,phone_number,hire_date,job_id)
+VALUES (555,'ahmad','azhar','aaaa','352.563.9683',SYSDATE,'AC_ACCOUNT');
+
+INSERTING SPECIFIC DATE VALUES
+INSERT INTO employees(
+employee_id,first_name,last_name,email,phone_number,hire_date,job_id)
+VALUES (666,'ahmad','azhar','bbbb','352.563.9683',
+TO_DATE('FEB 3,2010','MON DD,YYYY'),'AC_ACCOUNT');

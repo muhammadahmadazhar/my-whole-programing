@@ -1,0 +1,64 @@
+git config --global user.name "muhammadahmadazhar"
+git config --global user.email "muhammadahmadazhar16@gmail.com"
+
+git clone ssh_address    IT WILL MAKE NEW FOLDER AND INSIDE .git FOLDER
+
+git clone ssh_address .  IT WILL MAKE OPEND FOLDER TO .git FOLDER 
+
+#IT INITIALIZES DIRECTORY AS A .git DIRECTORY
+git init
+
+#WE CAN SET ORIGIN FOR OUR DIRECTORT TO UPLOAD OR DOWNLAD OF THAT REMOTE REPOSITORY
+git remote add origin https://github.com/muhammadahmadazhar/test_repos.git
+
+#WHEN WE CHANGED FILES WE CHECK DIFFERENCE WITH ALREADY COMMITED  FILE
+git diff utils.txt
+
+#TO RETURN TO FIRST STAGE MEAN MEAN NOW NOTHING CHANGE IN FILE NOW
+git checkout index.txt
+git checkout .              FOR ALL FILES
+
+
+#ADD ALL FILES TO STAGING AREA READY TO COMMIT
+git add -A        STAGE ALL FILES 
+git add .         STAGE NEW AND MODIFIED, WITHOUT DELETED
+git add -u        STAGE DELETED AND MODIFIED,WITHOUT NEW
+
+#IT TELLS DIFFERENCE B/W STAGING AREA AND ALREADY COMMITED FILE
+git diff --staged utils.txt
+
+#TO RETURN TO PREVIOUS STAGE 
+git reset utils.txt
+
+git commit -m "version 1"
+git log
+
+git push -u origin master
+
+#IT UPDATES ALL COMMITS EVEN WE PERFORM FROM GITHUB WEBSITE AND SHOW ON LOG IF U WANT
+git pull origin master
+
+#IT MAKES A COPY OF REMOTE REPOSITORY TO YOUR LOCAL REPOSITORY
+git push http......
+
+#IT UPDATES YOUR LOCAL REPOSITORY WITH  LATEST REMOTE REPOSITORY
+git pull httm......
+
+#TO CHECK IN WHICH BRANCH WE ARE AND LIST OF BRANCHES
+git branch
+
+#MEAN SWITCH TO login-system BRANCH
+git checkout login-system
+
+#TO SEND YOUR PROJECT TO OUR BRANCH ON GIT HUB
+git push origin login-system
+
+#AGAIN SWITCH TO master BRANCH AND PERFORM FOLLOWING COMMANDS
+git merge login-system     NOW PUSH TO master BRANCH ON GIT HUB
+
+#DELETE BRANCH FROM LOCAL GIT
+git branch -d login-system
+
+#DELETE BRANCH FROM REMOTE GIT HUB
+git push origin --delete login-system
+

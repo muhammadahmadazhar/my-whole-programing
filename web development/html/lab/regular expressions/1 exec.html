@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+     <p>search for e in next paragraph</p>
+     <p id="p1">the best things in life are free</p>
+     <p id="demo"></p>
+     <script>
+     	text=document.getElementById("p1").innerHTML;
+     	document.getElementById("demo").innerHTML=/e/.exec(text);
+     </script>
+</body>
+</html>

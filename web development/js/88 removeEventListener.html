@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>js</title>
+</head>
+<body>
+     <button id="mybtn">click me</button>
+     <script>
+        function show(){
+        alert("clicked");}
+
+        var btn=document.getElementById("mybtn");
+        btn.addEventListener("click",show,false);
+        btn.addEventListener("click",show,true);
+        
+        btn.removeEventListener("click",show,true);
+     </script>
+</body>
+</html>

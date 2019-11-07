@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="89 dom.css">
+	<title></title>
+</head>
+<body>
+      <div id="one"> 1
+      	<div id="two"> 2
+      		<div id="three"> 3
+      			<dir id="four"> 4
+      			</dir>
+      		</div>
+      	</div>
+      </div>
+      <script type="text/javascript">
+      	//bubbling phase
+      //	document.getElementById("one").addEventListener("click",function () {console.log("1");},false);
+      //	document.getElementById("two").addEventListener("click",function () {console.log("2");},false);
+      //	document.getElementById("three").addEventListener("click",function () {console.log("3");},false);
+      //	document.getElementById("four").addEventListener("click",function () {console.log("4");},false);
+
+      	// capture phase
+      	document.getElementById("one").addEventListener("click",function () {console.log("1");},true);
+      	document.getElementById("two").addEventListener("click",function () {console.log("2");},true);
+      	document.getElementById("three").addEventListener("click",function () {console.log("3");},true);
+      	document.getElementById("four").addEventListener("click",function () {console.log("4");},true);
+      </script>
+</body>
+</html>

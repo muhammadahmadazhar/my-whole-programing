@@ -1,0 +1,11 @@
+SELECT emp.ename,emp.job,dep.loc 
+FROM dep 
+INNER JOIN emp
+ON dep.deptno=emp.deptno;
+
+
+
+SELECT * 
+FROM emp 
+INNER JOIN dep
+ON dep.deptno=emp.deptno WHERE emp.job='manager';

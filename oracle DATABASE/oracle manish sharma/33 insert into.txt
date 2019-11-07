@@ -1,0 +1,4 @@
+DESC example1;
+
+INSERT INTO example1(firstname,midname,lastname,exid)
+VALUES ('muhammad','ahmad','azhar',1);

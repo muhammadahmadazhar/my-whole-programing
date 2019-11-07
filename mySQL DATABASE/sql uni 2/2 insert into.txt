@@ -1,0 +1,6 @@
+INSERT INTO dep(
+depno,depname,loc
+)
+VALUES(
+'10','science','china'
+);

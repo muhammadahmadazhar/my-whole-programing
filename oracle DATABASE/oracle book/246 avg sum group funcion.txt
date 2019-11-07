@@ -1,0 +1,4 @@
+U CAN USE AVG AND SUM FOR NUMARIC DATA TYPE
+SELECT ROUND(AVG(salary),2),MAX(salary),MIN(salary),SUM(salary)
+FROM employees WHERE job_id LIKE '%REP%';
+

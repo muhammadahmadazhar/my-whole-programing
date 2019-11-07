@@ -1,0 +1,18 @@
+CREATE USER ironman IDENTIFIED BY ironman
+DEFAULT TABLESPACE rebelionrider TEMPORARY TABLESPACE temp_rebellionrider
+QUOTA 20M ON rebelionrider
+ACCOUNT UNLOCK;
+
+SELECT username,account_status,default_tablespace,temporary_tablespace,
+profile,authentication_type FROM dba_users;
+
+SELECT username,account_status,default_tablespace,temporary_tablespace,
+profile,authentication_type FROM dba_users WHERE LOWER(username)= 'ironman';
+
+GRANT create session TO ironman;
+
+CREATE USER batman IDENTIFIED BY batman
+DEFAULT TABLESPACE users TEMPORARY TABLESPACE temp
+QUOTA 20M ON users
+ACCOUNT UNLOCK;
+GRANT CREATE SESSION TO batman;

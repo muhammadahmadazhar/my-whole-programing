@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+      <form>
+      	<input type="checkbox" name="coffee" value="cream">with cream<br>
+      	<input type="checkbox" name="coffee" value="sugar">with sugar<br>
+      	<input type="button" onclick="myFunction()" value="send order"><br><br>
+      	<input type="text" id="order" size="50"><br>
+      	<input type="submit" value="submit">
+      </form>
+      <script type="text/javascript">
+      	function myFunction(){
+      		var coffee=document.forms[0];
+      	var txt=" ";
+      	var i;
+      	for(i=0;i<coffee.length;i++){
+      		if(coffee[i].checked){
+      			txt=txt+coffee[i].value+" ";
+      		}
+      	}
+      	document.getElementById("order").value="you ordered a coffee with"+txt;
+      	}
+      </script>
+</body>
+</html>

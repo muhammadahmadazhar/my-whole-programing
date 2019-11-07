@@ -1,0 +1,8 @@
+USE business;
+SELECT * FROM emp where job='clerk' AND sal='800';
+
+USE business;
+SELECT * FROM emp where job='manager' OR deptno='20';
+
+USE business;
+SELECT * FROM emp where NOT job='CLERK' AND NOT job='salesman';

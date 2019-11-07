@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title class="geek">Tree</title>
+</head>
+<body>
+	  <!--This is comment-->
+      <h1 id="myid" >
+      We are learning JavaScript
+      <!--This is comment-->
+      </h1>
+      <p  id="myid1" > I am paragaraph</p>
+      <script type="text/javascript">
+      	//Document
+      	document.write("---Document---"+"<br>");
+      	document.write(document.nodeName + "<br>");
+      	document.write(document.nodeValue + "<br>");
+      	document.write(document.nodeType + "<br>");
+      	// Element
+      	document.write("---Element---"+"<br>");
+      	var elm=document.getElementById("myid");
+      	document.write(elm.nodeName + "<br>");
+      	document.write(elm.nodeValue + "<br>");
+      	document.write(elm.nodeType + "<br>");
+      	//Text
+        var txt=document.getElementById("myid");
+        document.write("---Text---"+"<br>");
+        document.write(txt.firstChild.nodeName + "<br>");
+      	document.write(txt.firstChild.nodeValue + "<br>");
+      	document.write(txt.firstChild.nodeType + "<br>");
+      	//Comment
+        var com=document.getElementById("myid");
+        document.write("---Comment---"+"<br>");
+        document.write(com.firstChild.nextSibling.nodeName + "<br>");
+      	document.write(com.firstChild.nextSibling.nodeValue + "<br>");
+      	document.write(com.firstChild.nextSibling.nodeType + "<br>");
+
+      	// Change Text of Element
+      	var text=document.getElementById("myid").firstChild.nodeValue  ="This is new Text";
+      </script>
+</body>
+</html>

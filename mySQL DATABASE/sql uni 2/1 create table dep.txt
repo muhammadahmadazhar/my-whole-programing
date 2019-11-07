@@ -1,0 +1,6 @@
+USE business;
+CREATE TABLE dep(
+depno INT(2) NOT NULL,
+depname VARCHAR(10) NULL,
+lOC VARCHAR(15) UNIQUE
+);

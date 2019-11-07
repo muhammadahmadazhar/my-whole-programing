@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+     <div id="mydiv" style="width: 200px; height: 200px; background-color: green;">
+     	<a href="http://www.geekyshows.com" id="mylink">click and open geekyshows</a>
+     </div>
+     <script type="text/javascript">
+     	function stopLink(e){
+         e.preventDefault();
+        // e.stopPropagation();
+     	}
+     	function div1(e){
+        this.style.backgroundColor="red";
+     	}
+     	document.getElementById("mylink").addEventListener("click",stopLink,false);
+     	document.getElementById("mydiv").addEventListener("click",div1,false);
+     </script>
+</body>
+</html>

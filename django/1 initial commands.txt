@@ -1,0 +1,13 @@
+django-admin startproject textutils
+
+python manage.py runserver
+
+then open urls.py in pycharm and
+from . import views
+
+quit the server by ctrl c
+
+
+python manage.py startapp shop
+
+

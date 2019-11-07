@@ -1,0 +1,13 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.imperial-hotel-copenhagen.com	TRUE	/	FALSE	1999999999	PHPSESSID	pvdui73kqpsonv4da69ipsi6c7
+.google.com	TRUE	/	FALSE	1999999999	NID	138=gOjKE-5IPzXg3nVsojkrRtIwWTgauA68bVk8eEUq8MfY6oFmpteoULHTvo4K1ihUFmtgNBI-kZ53Kb230xHTWW5XlpquWyHoSocPNGfHkWOF5T0LJk4fySnlpHV7voCx
+.tripadvisor.dk	TRUE	/	FALSE	1999999999	TASession	V2ID.9A9FDDB070E610EB275EF5B227989A13*SQ.1*GR.50*ABTR.65*HS.recommended*ES.popularity*AS.popularity*DS.5*SAS.popularity*FPS.oldFirst*FA.1*TRA.true
+.tripadvisor.dk	TRUE	/	FALSE	1999999999	ServerPool	B
+.tripadvisor.dk	TRUE	/	FALSE	1999999999	TACds	A.1.11900.2.2018-09-13
+.tripadvisor.dk	TRUE	/	FALSE	1999999999	TAUnique	%1%enc%3AGoCHE6LiDHxNUGLyE12%2BmU4PiJp0GS%2FetnM%2BJRLPcWABS27FZ6YVQQ%3D%3D
+.tripadvisor.com	TRUE	/	FALSE	1999999999	TASession	V2ID.380B0C3F3D036D5F2A837D867C14019A*SQ.1*GR.2*ABTR.92*HS.recommended*ES.popularity*AS.popularity*DS.5*SAS.popularity*FPS.oldFirst*FA.1*TRA.true
+.tripadvisor.com	TRUE	/	FALSE	1999999999	ServerPool	B
+.tripadvisor.com	TRUE	/	FALSE	1999999999	TACds	A.1.15079.2.2018-09-13
+.tripadvisor.com	TRUE	/	FALSE	1999999999	TAUnique	%1%enc%3AkCg5dR1jOUFNUGLyE12%2BmU4PiJp0GS%2FeYanoHKKtn959i1%2B2aew%2BBQ%3D%3D
+

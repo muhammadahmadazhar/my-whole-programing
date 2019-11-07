@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title class="geek">Tree</title>
+</head>
+<body>
+	  <!--This is comment-->
+      <h1 id="myid" class="myclass" >
+      We are learning JavaScript
+      <!--This is comment-->
+      </h1>
+      <p  id="myid1" > I am paragaraph</p>
+      <script type="text/javascript">
+      	var result=document.getElementById("myid");
+        document.write(result.attributes[0].name+" = ");
+        document.write(result.attributes[0].value+"<br>");
+
+        document.write(result.attributes[1].name+" = ");
+        document.write(result.attributes[1].value+"<br>");
+
+        var len=result.attributes.length;
+        document.write(len+"<br>");
+        for(let i=0;i<len;i++){
+        document.write(result.attributes[i].name+" = ");
+        document.write(result.attributes[i].value+"<br>");
+        }
+      </script>
+</body>
+</html>

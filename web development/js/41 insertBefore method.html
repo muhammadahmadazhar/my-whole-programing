@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>insertBefore</title>
+</head>
+<body>
+      <div>
+      	<h1>We are learning JS</h1>
+      	<ul id="myul">
+      		<li id="myjango">DJango</li>
+      		<li>JQuery</li>
+      		<li id="myang">Angular JS</li>
+      		<li>React JS</li>
+      	</ul>
+        <h1>Programing Languages</h1>
+      	<ul>
+      		<li>Java Programing</li>
+      		<li>C++ Programing</li>
+      		<li>PHP Programing</li>
+      		<li id="mynod">Node JS</li>
+      	</ul>
+      </div>
+      <script type="text/javascript">
+      	var parentNode=document.getElementById("myul");
+      	var newNode=document.createElement("li");
+      	newNode.textContent="Backbone JS";
+      	var refNode=document.getElementById("myang");
+      	//inserting new Node before reference node
+      	parentNode.insertBefore(newNode, refNode);
+
+      	var last=document.getElementById("myul");
+      	var first=document.getElementById("myjango");
+      	//inserting first node at the end
+      	last.insertBefore(first, null);
+
+      	var myul=document.getElementById("myul");
+      	var movNode=document.getElementById("mynod");
+      	myul.insertBefore(movNode, refNode);
+      	console.log(parentNode);
+      </script>
+</body>
+</html>

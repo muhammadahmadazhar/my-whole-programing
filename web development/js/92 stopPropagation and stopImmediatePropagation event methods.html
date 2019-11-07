@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="89 dom.css">
+	<title></title>
+      <style type="text/css">
+          #one{
+      width: 400px;
+      height: 400px;
+      background-color: orange;
+}
+
+#two{
+      width: 300px;
+      height: 300px;
+      background-color: lightblue;
+}
+
+#three{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+}  
+      </style>
+</head>
+<body>
+      <div id="one"> 1
+      	<div id="two"> 2
+      		<div id="three"> 3
+      		</div>
+      	</div>
+      </div>
+      <script type="text/javascript">
+            function div1(e){
+                  this.style.backgroundColor="red";
+            }
+            function div2(e){
+                  this.style.backgroundColor="blue";
+                  e.stopPropagation();
+                 // e.stopImmediatePropagation();
+            }
+            function div2_2(e){
+                  this.style.width="225px";
+            }
+            function div3(e){
+                  this.style.backgroundColor="green";
+            }
+      	//bubbling phase
+      	var divone=document.getElementById("one").addEventListener("click",div1,false);
+      	var divtwo=document.getElementById("two");
+                divtwo.addEventListener("click",div2,false);
+                divtwo.addEventListener("click",div2_2,false);
+      	var divthree=document.getElementById("three").addEventListener("click",div3,false);
+      
+      </script>
+</body>
+</html>

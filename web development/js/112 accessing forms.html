@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forms</title>
+</head>
+<body>
+      <form action="" name="myform" id="myformid">
+      	Username:<input type="text" name="mUsername" value="Type Your Name"><br>
+      	Password:<input type="password" name="mPassword" value="Type Your Password"><br>
+      	<input type="submit" name="" value="Submit"><br><br>
+      </form>
+
+      <form action="" name="yform" id="yformid">
+      	Username:<input type="text" name="yUsername" placeholder="Type Your Name"><br>
+      	Password:<input type="password" name="yPassword" placeholder="Type Your Password"><br>
+      	<input type="submit" name="" value="Submit">
+      </form>
+      <script type="text/javascript">
+      	var form=document.forms['0'];
+        console.log(form);
+
+        var form1=document.forms['yform'];
+        console.log(form1);
+
+        var form3=document.myform;
+        console.log(form3);
+
+        var form4=document.getElementById('myformid');
+        console.log(form4);
+      </script>
+</body>
+</html>

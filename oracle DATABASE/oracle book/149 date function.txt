@@ -1,0 +1,19 @@
+SELECT SYSDATE FROM dual;
+SELECT SYSDATE+5 FROM dual;      date     adds a number of days to a date
+SELECT SYSDATE-5 FROM dual;      date     subtracts a number of days from a date
+SELECT SYSDATE - hire_date FROM employees; number of days subtrat one date from another
+SELECT SYSDATE +50/24 FROM dual; date    adds a number of hours to adate
+
+SELECT SYSTIMESTAMP  FROM dual;
+
+SELECT (SYSDATE-hire_date)/7 weaks FROM employees WHERE department_id=90;
+
+date functions
+SELECT MONTHS_BETWEEN(SYSDATE,hire_date) FROM employees;
+SELECT ADD_MONTHS(SYSDATE,6) FROM employees;
+SELECT NEXT_DAY(SYSDATE, 'FRIDAY') FROM dual;
+SELECT LAST_DAY(SYSDATE) FROM dual;
+SELECT ROUND(SYSDATE,'YEAR') FROM dual;
+SELECT ROUND(SYSDATE,'MONTH') FROM dual;
+SELECT TRUNC(SYSDATE,'YEAR') FROM dual;
+SELECT TRUNC(SYSDATE,'MONTH') FROM dual;

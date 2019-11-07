@@ -1,0 +1,3 @@
+to avoid a catesin product always use a valid join condition in where clause
+
+SELECT last_name,department_name FROM employees ,departments;

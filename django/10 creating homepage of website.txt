@@ -1,0 +1,37 @@
+from django.http import HttpResponse
+from django.shortcuts import render
+
+def index(request):
+    return render(request,'index.html')
+
+def removepunc(request):
+    djtext=request.GET.get('text','default')
+    print(djtext)
+    return HttpResponse("remove punctuation")
+
+def capfirst(request):
+    return HttpResponse("capitalize first")
+
+def newlineremove(request):
+    return HttpResponse("new line remove first")
+
+def spaceremove(request):
+    return HttpResponse("space removed <a href='/'>back</a>")
+
+def charcount(request):
+    return HttpResponse("character count")
+
+URL PATTERNS
+    path('',views.index, name='index'),
+    path('removepunc',views.removepunc, name='remove'),
+    path('capfirst',views.capfirst, name='cap'),
+    path('newlineremove',views.newlineremove, name='new'),
+    path('spaceremove',views.spaceremove, name='space'),
+    path('charcount',views.charcount, name='char'),
+
+HTML FILE
+<h1>welcome to the text analyzer.enter your text below</h1>
+     <form action="/removepunc" method="get">
+         <textarea name="text" style="margin: 0px; width: 678px; height: 60px;"></textarea>
+         <button type="submit">Analyze Text</button>
+     </form>

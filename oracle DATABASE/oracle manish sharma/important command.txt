@@ -1,0 +1,9 @@
+https://localhost:1158/em
+desktop ip=ipconfig /all
+
+set ORACLE_SID=orcl
+echo %ORACLE_SID%
+sqlplus sys/oracle as sysdba
+
+if u want to change user while connected with current user
+conn hr/hr

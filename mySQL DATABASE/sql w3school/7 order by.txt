@@ -1,0 +1,6 @@
+USE business;
+SELECT * FROM emp ORDER BY ename ASC, sal DESC;
+
+
+USE business;
+SELECT ename,sal FROM emp ORDER BY ename ASC, sal DESC;

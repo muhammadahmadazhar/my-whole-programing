@@ -1,0 +1,1 @@
+SELECT last_name ||' is a '||job_id AS "EmplOyee Details" FROM employees;

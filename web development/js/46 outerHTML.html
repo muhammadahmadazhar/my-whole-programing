@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>innerHTML</title>
+</head>
+<body>
+      <div>
+      	<h1>We are learning JS</h1>
+      	<ul id="myul">
+      		<li>DJango</li>
+      		<li>JQuery</li>
+      		<li>Angular JS</li>
+      		<li>React JS</li>
+      	</ul>
+      	<script type="text/javascript">
+      		var u=document.getElementById("myul");
+                  u.outerHTML="<p> This is paragraph</p>";
+                  console.log(u);
+                  console.log(u.outerHTML);
+      	</script>
+</body>
+</html>

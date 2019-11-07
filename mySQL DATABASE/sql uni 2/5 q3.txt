@@ -1,0 +1,1 @@
+SELECT * FROM `dep` WHERE depname LIKE 's%'AND loc LIKE '%O';

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>insertAdjacentElement</title>
+</head>
+<body>
+      <div id="mydiv">
+      	<h1 id="myh1">Heading 1</h1>
+      	<h2 id="myh2">Heading 2</h2>
+      	<h3 id="myh3">Heading 3</h3>
+      </div>
+      <script type="text/javascript">
+      	var parentNode=document.getElementById("mydiv");
+      	var h=document.getElementById("myh2");
+      	var newNode=document.createElement("span");
+      	newNode.textContent="I am span";
+      	//h.insertAdjacentElement('beforebegin', newNode);
+      	//h.insertAdjacentElement('afterbegin', newNode);
+      	//h.insertAdjacentElement('beforeend', newNode);
+      	h.insertAdjacentElement('afterend', newNode);
+      	console.log(parentNode);
+      </script>
+</body>
+</html>

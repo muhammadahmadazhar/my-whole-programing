@@ -1,0 +1,11 @@
+SELECT department_id,ROUND(AVG(salary),2) 
+FROM employees GROUP BY (department_id);
+
+SELECT ROUND(AVG(salary),2) 
+FROM employees GROUP BY (department_id);
+
+SELECT department_id,ROUND(AVG(salary),2) 
+FROM employees GROUP BY (department_id) ORDER BY ROUND(AVG(salary),2);
+
+SELECT department_id dept_id,job_id,SUM(salary) FROM employees
+GROUP BY department_id,job_id;

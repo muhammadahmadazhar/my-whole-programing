@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.myclass1{background-color: blue;}
+		.myclass2{background-color: red;}
+	</style>
+</head>
+<body>
+     <p id="myp" class="myclass2 myclass3" style="color: yellowgreen">Paragraph</p>
+     <script type="text/javascript">
+     	var p=document.getElementById("myp");
+     	var elementClass=p.classList;
+          console.log(elementClass);
+          console.log(elementClass[1]);
+          //these are properties
+          console.log(elementClass.length);
+          console.log(elementClass.value);
+          //these are the methods
+          console.log(elementClass.item(1));
+          //we can add myltiple classes or single classe
+          elementClass.add('myclass4','myclass5','myclass6');
+          console.log(p);
+          //we can remove myltiple classes or single classe
+          elementClass.remove('myclass6');
+          console.log(p); 
+          elementClass.replace("myclass2","myclass1");
+          var true_false=elementClass.contains("myclass3");
+          console.log(true_false);
+          elementClass.toggle("myclass1")
+     </script>
+</body>
+</html>

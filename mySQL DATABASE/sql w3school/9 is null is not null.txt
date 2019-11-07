@@ -1,0 +1,6 @@
+USE business;
+SELECT ename,job FROM emp WHERE comm IS NULL;
+
+
+USE business;
+SELECT ename,job FROM emp WHERE comm IS NOT NULL;

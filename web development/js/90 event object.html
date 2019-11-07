@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+     <p id="myp">click me</p>
+     <script type="text/javascript">
+     	document.getElementById("myp").addEventListener("click",function(e){console.log(e);});
+     	document.getElementById("myp").addEventListener("click",function(e){console.log(e.clientX);});
+     	document.getElementById("myp").addEventListener("click",function(e){console.log(e.clientY);});
+     	document.getElementById("myp").addEventListener("click",function(e){console.log(e.type);});
+     	document.getElementById("myp").addEventListener("click",function(e){console.log(e.target);});
+     </script>
+</body>
+</html>

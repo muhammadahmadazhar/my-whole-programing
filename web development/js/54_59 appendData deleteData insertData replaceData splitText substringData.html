@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modifying text Nodes Methods</title>
+</head>
+<body>
+      <h1 id="myh1">Hello GeekyShows</h1>
+      <h2 id="myh2">We are learning JS</h2>
+      <h3 id="myh3">Hello GeekyShows</h3>
+      <h4 id="myh4">Hello GeekyShows</h4>
+      <h5 id="myh5">Hello GeekyShows</h5>
+      <h6 id="myh6">Hello GeekyShows</h6>
+      <script type="text/javascript">
+      	var myh1=document.getElementById("myh1");
+      	myh1.firstChild.appendData(" World");
+      	console.log(myh1.firstChild);
+       
+        var myh2=document.getElementById("myh2");
+        myh2.firstChild.deleteData(0,6);
+        console.log(myh2.firstChild);
+
+        var myh3=document.getElementById("myh3");
+        myh3.firstChild.insertData(3," bye ");
+        console.log(myh3.firstChild);
+
+        var myh4=document.getElementById("myh4");
+        myh4.firstChild.replaceData(0, 4," bye ");
+        console.log(myh4.firstChild);
+
+        var myh5=document.getElementById("myh5");
+        var rightSide=myh5.firstChild.splitText(4);
+        console.log(rightSide);
+        console.log(myh5.childNodes);
+
+        var myh6=document.getElementById("myh6");
+        var leftSide=myh6.firstChild.substringData(0, 4);
+        console.log(leftSide);
+      </script>
+</body>
+</html>

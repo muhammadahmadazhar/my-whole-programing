@@ -1,0 +1,7 @@
+python manage.py create superuser
+//to see our table we register our table.open admin.py of shop and write following code
+//write in the admin.py of shop
+
+from .models import product
+
+admin.site.register(product)

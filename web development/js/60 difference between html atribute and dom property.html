@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <p id="myid" title="mypara" class="myclass">Paragraph</p>
+    <script type="text/javascript">
+    	var p=document.getElementById("myid");
+    	console.log(Object.prototype.toString.call(p));
+    	console.log(p.title);
+    	console.log(p.id);
+    	console.log(p.className);
+    	p.title="para";
+    	console.log(p);
+    </script>
+</body>
+</html>

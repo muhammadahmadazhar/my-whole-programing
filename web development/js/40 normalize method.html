@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creating Nodes</title>
+</head>
+<body>
+      <div id="mydiv">
+      	<h1 id="myh1">We are learning javaScript</h1>
+
+      </div>
+      <section id="mysec">
+            
+      </section>
+      <script type="text/javascript">
+       var mydiv=document.getElementById("mydiv");
+
+       mydiv.appendChild(document.createTextNode("My name "));
+       mydiv.appendChild(document.createTextNode("is Ahmad"));
+
+       console.log(mydiv.childNodes);
+       mydiv.normalize();
+      </script>
+</body>
+</html>

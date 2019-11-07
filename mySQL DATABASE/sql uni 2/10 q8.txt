@@ -1,0 +1,5 @@
+SELECT *,sal*0.10 AS sallery 
+FROM `emp`
+WHERE sal*0.10 
+AND
+hiredate LIKE '%80'

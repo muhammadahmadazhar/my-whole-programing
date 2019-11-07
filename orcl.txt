@@ -1,0 +1,3 @@
+https://localhost:1158/em
+global database name orcl
+password orcl

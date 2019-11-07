@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title class="geeky">js</title>
+</head>
+<body>
+      <h1>we are learning javascript</h1>
+      <h1 class="geeky myclass">subscribe geekyshows</h1>
+      <p class="geeky">hello
+         <span>geekyshows</span>
+         <em>world</em>
+         <span>youtube</span>
+      </p>
+      <p class="geeky">
+            <span>by</span>
+            geekyshows
+      </p>
+      <div id="show">
+            <p>1st p in div</p>
+            <p class="geeky">2nd p in div</p>
+      </div>
+      <script>
+      var getShow=document.getElementById("show");
+      var result=getShow.getElementsByClassName("geeky");
+      document.write(result);
+         console.log(result);
+
+      var getGeeky=document.getElementById("show").getElementsByClassName("geeky");
+      document.write(getGeeky);
+         console.log(getGeeky);
+      </script>
+</body>
+</html>

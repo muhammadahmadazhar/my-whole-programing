@@ -1,0 +1,8 @@
+SELECT last_name,department_name FROM employees 
+CROSS JOIN departments;
+
+
+THIS IS CARTESIAN PRODUCT
+SELECT last_name,department_name FROM employees,departments;
+
+CARTESIAN PRODUCT=CROSS JOIN

@@ -1,0 +1,28 @@
+# i have created this file
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("home")
+
+def removepunc(request):
+    return HttpResponse("remove punctuation")
+
+def capfirst(request):
+    return HttpResponse("capitalize first")
+
+def newlineremove(request):
+    return HttpResponse("new line remove first")
+
+def spaceremove(request):
+    return HttpResponse("space removed <a href='/'>back</a>")
+
+def charcount(request):
+    return HttpResponse("character count")
+
+URL PATTERNS
+    path('removepunc',views.removepunc, name='remove'),
+    path('capfirst',views.capfirst, name='cap'),
+    path('newlineremove',views.newlineremove, name='new'),
+    path('spaceremove',views.spaceremove, name='space'),
+    path('charcount',views.charcount, name='char'),
+

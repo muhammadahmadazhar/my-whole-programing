@@ -1,0 +1,3 @@
+select emp.ename as aaaaa,duplicate1emp.ename as bbbbb,emp.job 
+from emp,duplicate1emp
+where emp.job=duplicate1emp.job ;

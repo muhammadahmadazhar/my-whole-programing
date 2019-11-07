@@ -1,0 +1,10 @@
+DELETE FROM employees WHERE department_id=9999;
+
+INSERT INTO departments
+VALUES (290,'Corporate Tax',NULL,1700);
+
+SELECT * FROM departments;
+
+COMMIT;
+
+ROLLBACK;

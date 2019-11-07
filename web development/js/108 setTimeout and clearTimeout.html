@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+     <address id="add">
+     	   house# 739<br>
+           block# F<br>
+           street# 44<br>
+           gulshan ravi<br>
+           LAHORE
+     </address>
+     <button id="btn">STOP</button>
+     <script type="text/javascript">
+     /*	function changeCSS(){
+     		document.getElementById("add").style="color:red";
+     	}// we can also make anonimus function here
+     	setTimeout(changeCSS,2000);*/
+         //generally we use this
+     	 var timeoutID=setTimeout(() => {
+     		document.getElementById("add").style="color:red";
+     	    }, 5000)
+
+     	 function clrtime(){
+     	 	clearTimeout(timeoutID);
+     	 }
+     	 document.getElementById('btn').addEventListener('click',clrtime);
+     </script>
+</body>
+</html>

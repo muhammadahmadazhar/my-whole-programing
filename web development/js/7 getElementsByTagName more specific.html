@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>js</title>
+</head>
+<body>
+      <h1>we are learning javascript</h1>
+      <h1>subscribe geekyshows</h1>
+      <p id="geeky">hello
+         <span>geekyshows</span>
+         <em>world</em>
+         <span>youtube</span>
+      </p>
+      <p id="fing">
+            <span>by</span>
+            geekyshows
+      </p>
+      <div>
+            <p>1st p in div</p>
+            <p>2nd p in div</p>
+      </div>
+      <script>
+      var getSpan=document.getElementById("geeky");
+      var result=getSpan.getElementsByTagName("span");
+      document.write(result);
+      console.log(result);
+
+     var getSpan1=document.getElementById("geeky").
+     getElementsByTagName("*");
+     document.write(getSpan1);
+      console.log(getSpan1);
+      </script>
+</body>
+</html>

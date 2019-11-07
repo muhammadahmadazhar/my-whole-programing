@@ -1,0 +1,26 @@
+two types of function 
+1)single row function
+2)multiple row function
+
+single row function
+1)character
+2)number 
+3)date
+4)convertion
+5)general
+character function 
+two type
+1)case manipulation function
+2)character manipulation function
+case manipulation function
+1)lower
+2)upper
+3)initcap
+character manipulation function
+1)concat
+2)substr
+3)length
+4)instr
+5)lpad  /rpad
+6)trim 
+7)replace

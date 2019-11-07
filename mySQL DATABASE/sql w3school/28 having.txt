@@ -1,0 +1,5 @@
+select count(empno),job
+from emp
+group by job
+having count(empno) >2
+order by count(empno) desc

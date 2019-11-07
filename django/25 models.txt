@@ -1,0 +1,16 @@
+for creating models
+//this apply migrations and how much tables needs to apps located in settings in apps it create all tables
+python manage.py migrate
+
+in setting apps change name of shop to 'shop.apps.ShopConfig'
+in models.py
+class product(models.Model):
+    product_id=models.AutoField
+    product_name=models.CharField(max_length=50)
+    desc=models.CharField(max_length=300)
+    pub_date=models.DateField()
+
+//this only make migrations not apply or not save to database
+python manage.py makemigrations
+// to save migrations or creating table
+python manage.py migrate

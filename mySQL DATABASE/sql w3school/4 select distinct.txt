@@ -1,0 +1,7 @@
+USE business;
+SELECT  job FROM emp;
+
+
+
+USE business;
+SELECT DISTINCT job FROM emp;

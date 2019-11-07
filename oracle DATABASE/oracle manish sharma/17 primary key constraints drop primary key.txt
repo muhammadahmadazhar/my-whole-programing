@@ -1,0 +1,39 @@
+CREATE TABLE product
+( pid number(2) PRIMARY KEY,
+  pname varchar2(10) UNIQUE, 
+  pdate DATE);
+DROP TABLE product;
+
+ primary key constraint at coloumn level
+CREATE TABLE product_master
+( pmid NUMBER(2) CONSTRAINT p_m_id PRIMARY KEY,
+  pmname VARCHAR(10) UNIQUE);
+DROP TABLE product_master;
+
+
+ primary key constraint at table level
+CREATE TABLE product_master
+( pmid NUMBER(2) ,
+  pmname VARCHAR(10) UNIQUE,
+  CONSTRAINT p_m_id PRIMARY KEY (pmid)
+  );
+  DROP TABLE product_master;
+
+ ALTER TABLE product_master ADD CONSTRAINT P_m_id PRIMARY KEY (pmid);
+ALTER TABLE product_master DROP CONSTRAINT P_m_id;
+ DESC product_master;
+
+composite primary key
+ CREATE TABLE customer
+  (cust_id NUMBER(2),
+  cust_name VARCHAR2(10),
+  ph_no VARCHAR2(11),
+  CONSTRAINT c PRIMARY KEY(cust_id,ph_no)
+  );
+
+ALTER TABLE customer DROP CONSTRAINT c ;
+ALTER TABLE customer ADD CONSTRAINT c PRIMARY KEY(cust_id,ph_no);
+
+enable and disable primary key
+ALTER TABLE customer DISABLE CONSTRAINT c ;
+ALTER TABLE customer ENABLE CONSTRAINT c ;

@@ -1,0 +1,7 @@
+USE business;
+SELECT * FROM emp where job='president';
+
+
+
+USE business;
+SELECT * FROM emp where sal<='1500';

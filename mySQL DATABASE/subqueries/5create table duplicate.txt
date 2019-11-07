@@ -1,0 +1,2 @@
+create table duplicate1emp as 
+(select * from emp);

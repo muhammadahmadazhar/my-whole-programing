@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forms</title>
+</head>
+<body>
+      <form action="" name="myform" id="myformid">
+      	Username:<input type="text" name="mUsername" value="Type Your Name" id="usernameid"><br>
+      	Password:<input type="password" name="mPassword" value="Type Your Password"><br>
+      	<input type="submit" name="" value="Submit"><br><br>
+      </form>
+
+      <script type="text/javascript">
+        var field=document.getElementById('usernameid');
+        console.log(field);
+        console.log(field.type);
+        console.log(field.name);
+        console.log(field.value);
+        // with element index no
+        var field1=document.myform.elements[1];
+        console.log(field1);
+        console.log(field1.name);
+
+        var field2=document.myform.elements['mUsername'];
+        console.log(field2);
+        console.log(field2.name);
+               //we can also use id value too
+        var field3=document.myform.mUsername;
+        console.log(field3);
+        console.log(field3.name);
+
+        var field4=document.myform.mUsername;
+        field4.value="ahmad";
+      </script>
+</body>
+</html>

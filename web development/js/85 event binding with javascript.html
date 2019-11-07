@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>js</title>
+</head>
+<body>
+     <button id="mybtn">click me</button>
+     <button id="mybtn1">click</button>
+     <script>
+        var btn=document.getElementById("mybtn");
+        btn.onclick= function() {
+        alert("button clicked");};
+        
+        function disp(){
+        alert("clicked");}
+        
+        var btn1=document.getElementById("mybtn1");
+        btn1.onclick=disp;
+     </script>
+</body>
+</html>

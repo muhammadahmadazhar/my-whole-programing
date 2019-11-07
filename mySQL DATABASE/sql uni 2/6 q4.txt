@@ -1,0 +1,1 @@
+SELECT *,sal*0.05 FROM `emp`;

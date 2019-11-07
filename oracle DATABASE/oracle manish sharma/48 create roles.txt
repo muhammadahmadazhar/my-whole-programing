@@ -1,0 +1,31 @@
+roles are named group of privileges than you can assign to other user or 
+other roles
+creating a role without password
+CREATE role demo1 NOT IDENTIFIED;
+
+creating a role with password
+CREATE role demo2 IDENTIFIED BY password12;
+
+creating external roles the authentification is handeled by external 
+services such as operating system
+CREATE role demo3 IDENTIFIED externally;
+CREATE role demo4 IDENTIFIED globally;
+
+role created is empty box.to make a role usefull we granted some privileges
+GRANT create table TO demo1 WITH ADMIN OPTION;
+GRANT select ON hr.employees TO demo1; no support WITH GRANT OPTION flag.
+
+granting one role to another role
+GRANT demo1 TO demo2;
+GRANT demo1 TO batman;
+GRANT demo2 TO batman;
+GRANT demo2 TO ironman;
+
+role is disabled earlier so we enable it by set role statement
+SET role demo1;
+SET role demo2 IDENTIFIED BY password12;
+
+CREATE role demo5 IDENTIFIED BY demo5;
+GRANT select ON hr.employees TO demo5;
+SET role demo5 IDENTIFIED BY demo5;
+GRANT demo5 TO ironman;

@@ -1,0 +1,5 @@
+SELECT first_name FROM employees WHERE first_name LIKE 'S%';
+SELECT first_name FROM employees WHERE first_name LIKE '%s';
+SELECT first_name FROM employees WHERE job_id     LIKE '%MAN%';
+SELECT first_name FROM employees WHERE first_name LIKE 'J%s';
+SELECT first_name FROM employees WHERE first_name LIKE '_a%';

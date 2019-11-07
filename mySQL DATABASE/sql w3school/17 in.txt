@@ -1,0 +1,5 @@
+SELECT * FROM  emp WHERE job IN ('president','analyst');
+
+SELECT * FROM  emp WHERE job NOT IN ('president','analyst');
+
+SELECT * FROM  emp WHERE deptno IN ( SELECT deptno FROM dep);

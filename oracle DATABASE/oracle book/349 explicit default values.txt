@@ -1,0 +1,8 @@
+INSERT INTO departments(
+                        department_id,department_name,manager_id)
+VALUES (300,'Engineer',DEFAULT);
+
+SELECT * FROM departments;
+
+UPDATE departments 
+SET manager_id=DEFAULT WHERE department_id=300;

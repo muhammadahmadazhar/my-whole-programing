@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Complete.Form</title>
+</head>
+<body>
+<form>
+	<table border="1">
+		<tr><td>FirstName<br><input type="text" name="FirstName" placeholder="Enter FirstName"></td>
+			<td>LastName<br><input type="text" name="LastName" placeholder="Enter LastName"></td>
+		</tr>
+		<tr>
+			<td>Dob<br><input type="date" name="Dob" placeholder="Enter date"></td>
+			<td>Gender<br><input type="radio" name="Gender" value="male">male
+			              <input type="radio" name="Gender" value="female">female</td>
+		</tr>
+		<tr>
+			<td>Mobile No<br><input type="number" name="Mobile No" placeholder="Enter Mobile No"></td>
+			<td><br><input type="numner" name="Mobile No" placeholder="Enter Mobile No"></td>
+		</tr>
+		<tr>
+			<td colspan="2">Email<br><input type="text" name="Email" size="48"></td>
+		</tr>
+		<tr>
+			<td colspan="2">Address<br><textarea rows="3" cols="39">
+				</textarea></td>
+		</tr>
+		<tr>
+			<td>Select Any Course:</td>
+			<td>
+				<select name="Course">
+            	<option value="Software Engineering">Software Engineering</option>
+            	<option value="Ethical Hacking">Ethical Hacking</option>
+            	<option value="Web Development">Web Development</option>
+            	<option value="Database Administration">Database Administration</option>
+                </select>
+            </td>
+		</tr>
+		<tr>
+			<td>Upload Marksheet Here:</td>
+			<td><input type="file" accept=".jpg"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="checkbox" checked="checked" name="accept" value="If All Informations Are True">If All Informations Are True</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" value="SUBMIT"></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

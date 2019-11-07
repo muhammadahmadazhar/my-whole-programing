@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creating Nodes</title>
+</head>
+<body>
+      <div id="mydiv">
+      	<h1 id="myh1">We are learning javaScript</h1>
+
+      </div>
+      <section id="mysec">
+            
+      </section>
+      <script type="text/javascript">
+
+      	var mydiv=document.getElementById("mydiv");
+            console.log(mydiv);
+            var mysec=document.getElementById("mysec");
+            console.log(mysec);
+            var myh1=document.getElementById("myh1");
+            //append h1 to section tag
+            mysec.appendChild(myh1);
+            //create a element node
+            var elNode=document.createElement("h2");
+            //create  a text node
+            var appTextNode=document.createTextNode("i am heading of h2 tag");
+            //append  newly created element node into div tag
+            mydiv.appendChild(elNode);
+            //append text node into newly created tag
+            elNode.appendChild(appTextNode);
+            //create new text node 
+            var textNode=document.createTextNode("I am textNode");//append text node into div tag
+            mydiv.appendChild(textNode);
+            //create new comment node
+            var comNode=document.createComment("comment from js");
+            //append comment node into div tag
+            mydiv.appendChild(comNode);
+      </script>
+</body>
+</html>

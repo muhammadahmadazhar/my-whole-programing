@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+     <p id="myid" class="myclass" style="background-color: red">paragraph</p>
+     <script type="text/javascript">
+     	var p=document.getElementById("myid");
+     	    p.setAttribute('class','name_changed');
+     	//we add attribute which is not present
+     	    p.setAttribute('title','new_title');
+     //this will overwrite existing style and remove previous
+     //p.style.fontStyle="italic" this is called DOM property;
+       p.setAttribute('style','font-style: italic;');//this is html attribute
+     	console.log(p);
+     	var getAt=p.getAttribute('id');
+     	//console.log(p.id);mostly we use this
+     	console.log(getAt);
+     </script>
+</body>
+</html>

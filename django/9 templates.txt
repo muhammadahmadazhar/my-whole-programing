@@ -1,0 +1,16 @@
+first go in settings.py and in templates in dir write dir['templates'] save
+
+
+from django.http import HttpResponse
+from django.shortcuts import render
+
+def index(request):
+    params={'name':'Ahmad','place':'Earth'}
+    return render(request,'index.html',params)
+
+
+create a folder templates at a place of manage.py and put html file in templates folder
+
+html file
+<h1>we have created a template</h1>
+     {{ name }} is from {{ place }}

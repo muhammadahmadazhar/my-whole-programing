@@ -1,0 +1,6 @@
+select job
+from emp 
+union
+select job 
+from duplicate1emp;
+/* union gives only distinct values from jobs of two table

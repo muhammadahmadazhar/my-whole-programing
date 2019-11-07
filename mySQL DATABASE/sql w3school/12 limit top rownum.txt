@@ -1,0 +1,9 @@
+SELECT * FROM emp LIMIT 3;
+SELECT * FROM emp limit 0,5;
+SELECT * FROM emp limit 2,5;
+
+// if more than 3 records want to show due 
+to this not more than 3 show;
+
+
+SELECT * FROM emp WHERE ename='scott' LIMIT 3;

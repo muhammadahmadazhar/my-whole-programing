@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1508331305 source:d:\programs ahmad\objected oriented c++\#34 standard template library\array stl\main.cpp
+	<iostream>
+	<array>
+

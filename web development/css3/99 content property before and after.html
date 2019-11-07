@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		p::before { content: " hyyyyyyyy "; }
+		p::after { content: " bbbyyyyyyy "; }
+
+		h1::before { content: open-quote; }
+		h1::after { content: close-quote; }
+
+		h2::before { content: url(print.png); }
+		h2::after { content: url(print.png); }
+	</style>
+</head>
+<body>
+      <h1>content:normal,none,counter,attr(attribute),string,open-quote,close-quote,no-open-quote,no-close-quote,url()</h1>
+      <p>this is paragraph this is paragraph this is paragraph this is paragraph this is paragraph</p>
+      <h1>this is heading</h1>
+      <p>this is paragraph this is paragraph this is paragraph this is paragraph this is paragraph</p>
+      <h2>I am second heading</h2>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+     <div id="one" style="width: 200px; height: 200px; background-color: red;">
+     	<div id="two" style="width: 100px; height: 100px; background-color: black">	
+     	</div>
+     </div>
+     <script type="text/javascript">
+     	function div2(e){
+     		console.log(e.type+" 2");
+     	}
+     	function div1(e){
+     		console.log(e.type+" 1");
+     	}
+     	var one=document.getElementById("one");
+     	var two=document.getElementById("two");
+      /*two.addEventListener("mousedown",div2,false);
+     	two.addEventListener("click",div2,false);
+     	two.addEventListener("mouseup",div2,false);
+     	two.addEventListener("dblclick",div2,false);
+     	two.addEventListener("mouseenter",div2,false);
+     	two.addEventListener("mouseleave",div2,false);
+     	two.addEventListener("mouseover",div2,false);
+     	two.addEventListener("mouseout",div2,false);
+     	two.addEventListener("contextmenu",div2,false);*/
+
+        //now we are checking bubble up or not
+     	two.addEventListener("mousedown",div2,false);
+     	one.addEventListener("mousedown",div1,false);
+     	two.addEventListener("mouseup",div2,false);
+     	one.addEventListener("mouseup",div1,false);
+     	two.addEventListener("click",div2,false);
+     	one.addEventListener("click",div1,false);
+     	//mouseenter or mouseleave are not bubble up
+        two.addEventListener("mouseenter",div2,false);
+     	one.addEventListener("mouseenter",div1,false);
+     	two.addEventListener("mouseleave",div2,false);
+     	one.addEventListener("mouseleave",div1,false);
+
+      /*two.addEventListener("mouseover",div2,false);
+     	one.addEventListener("mouseover",div1,false);
+     	two.addEventListener("mouseout",div2,false);
+     	one.addEventListener("mouseout",div1,false);*/
+     </script>
+</body>
+</html>

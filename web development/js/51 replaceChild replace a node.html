@@ -1,0 +1,31 @@
+n<!DOCTYPE html>
+<html>
+<head>
+	<title>replaceChild</title>
+</head>
+<body>
+      <h1>We are learning JS</h1>
+      <ul id="myul">
+                  <li>item 1</li>
+                  <li>item 2</li>
+                  <li id="i3">item 3</li>
+                  <li id="i4">item 4</li>
+                  <li>item 5</li>
+      </ul>
+      <span id="myspan">i am span</span>
+      
+      <script type="text/javascript">
+       var parentNode=document.getElementById("myul");
+       var oldNode=document.getElementById("i3");
+       var newNode=document.createElement("li");
+       newNode.textContent= "item N";
+       var replaceNode=parentNode.replaceChild(newNode,oldNode);
+       console.log(replaceNode);
+       //replace an existing node with old node
+       var span=document.getElementById("myspan");
+       var i4=document.getElementById("i4");
+       var replaceNode1=parentNode.replaceChild(span,i4);
+       console.log(replaceNode1);
+      </script>
+</body>
+</html>

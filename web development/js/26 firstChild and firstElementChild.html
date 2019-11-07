@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title class="geek">Tree</title>
+</head>
+<body>
+	    <!--This is comment-->
+      <h1 id="myid">
+        <!--This is comment-->
+      <span>We are learning JavaScript</span><em> Hello</em>
+      </h1>
+      <p>I am paragraph</p>
+      <p id="myid1"><span>i am span </span> I am paragaraph</p>
+      <script type="text/javascript">
+      	var result=document.getElementById("myid");
+        console.log(result.firstChild);
+        console.log(result.firstElementChild);
+        //result.firstChild.textContent="Hello Beginner ";
+        result.firstElementChild.textContent="we are learning Dom";
+        //childNodes[0] == firstChild, 
+        //children[0]==firstElementChild
+      </script>
+</body>
+</html>

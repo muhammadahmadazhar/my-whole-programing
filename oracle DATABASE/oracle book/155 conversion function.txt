@@ -1,0 +1,33 @@
+conversion function
+1)data-type conversion
+   1)implicit data-type convertion
+   2)explicit data-type convertion
+implicit data-type conversion 
+for assignment oracle server automaticaly convert the following
+varchar2 or char       to number
+varchar2 or char       to date
+number                 to varchar2
+date                   to varchar2
+
+for experession evaluation oracle server automaticaly convert the following
+varchar2 or char       to number
+varchar2 or char       to date
+
+elements of the  date formate model
+yyyy  full years in numbers
+year  year spelled out
+MM    two digit value for month
+MONTH full name of the month
+MON   three letter abrevation of month
+dy    three letter abrevation of the day of weak
+DAY   full  name of the day of the weak
+DD    numeric day of the month
+
+elements of time
+HH24:MI:AM  15:45:32 PM
+DD "of" MONTH   12 of OCTOBER
+ddspth  fourteenth 
+
+
+explicit data-type conversion
+SELECT last_name, TO_CHAR(hire_date,'MM/YY') FROM employees WHERE last_name='Higgins';

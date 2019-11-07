@@ -1,0 +1,28 @@
+n<!DOCTYPE html>
+<html>
+<head>
+	<title>cloneNode</title>
+</head>
+<body>
+      <h1>We are learning JS</h1>
+      <ul id="myul">
+                  <li>item 1</li>
+                  <li>item 2</li>
+                  <li id="i3">item 3</li>
+                  <li>item 4</li>
+                  <li>item 5</li>
+      </ul>
+      <div id="mydiv">
+      	
+      </div>
+      
+      
+      <script type="text/javascript">
+       var parentNode=document.getElementById("myul");
+       var targetNode=document.getElementById("i3");
+       var delNode=parentNode.removeChild(targetNode);
+       parentNode.removeChild(parentNode.firstElementChild);
+       parentNode.removeChild(parentNode.childNodes[5]);
+      </script>
+</body>
+</html>

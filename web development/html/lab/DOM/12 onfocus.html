@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form>Enter Name:
+      <input type="text" id="myinput" onfocus="focusFunction()" onblur="blurFunction()">
+  </form>
+      <script type="text/javascript">
+      	function focusFunction(){
+      		document.getElementById("myinput").style.background="yellow";
+      	}
+      	function blurFunction(){
+      		document.getElementById("myinput").style.background="red";
+      	}
+      </script>
+</body>
+</html>

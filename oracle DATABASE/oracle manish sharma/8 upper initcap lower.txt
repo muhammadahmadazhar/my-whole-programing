@@ -1,0 +1,11 @@
+SELECT UPPER('hello world') FROM dual;
+
+SELECT INITCAP('hello world') FROM dual;
+
+SELECT LOWER('HELLO WORDL') FROM dual;
+
+INSERT INTO example VALUES(UPPER('ahmad'));
+
+INSERT INTO example VALUES(LOWER('AHMAD'));
+
+INSERT INTO example VALUES(INITCAP('hello world'));

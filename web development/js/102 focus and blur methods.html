@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+      <h1>Focus and Blur Methods</h1>
+      <button id="openbtn">Open Window</button>
+      <button id="focusbtn">focus Window</button>
+      <button id="blurbtn">blur Window</button>
+      <script type="text/javascript">
+      	var newWindow;
+      	function openWindow(){
+      		newWindow=window.open("http://www.facebook.com","_blank","width=400,height=400");
+      	}
+      	function focusWindow(){
+      		newWindow.focus();
+      	}
+      	function blurWindow(){
+      		newWindow.blur();
+      	}
+      	document.getElementById("openbtn").addEventListener("click",openWindow);
+      	document.getElementById("focusbtn").addEventListener("click",focusWindow);
+      	document.getElementById("blurbtn").addEventListener("click",blurWindow);
+      </script>
+</body>
+</html>

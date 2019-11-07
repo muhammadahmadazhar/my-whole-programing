@@ -1,0 +1,12 @@
+SELECT COUNT(comm) AS countcomm FROM emp;
+SELECT COUNT(comm) FROM emp;
+
+
+SELECT AVG(sal) AS averagesallery FROM emp;
+
+SELECT AVG(sal) FROM emp;
+
+
+SELECT SUM(sal) AS totalsallery FROM emp;
+
+SELECT SUM(sal) FROM emp;

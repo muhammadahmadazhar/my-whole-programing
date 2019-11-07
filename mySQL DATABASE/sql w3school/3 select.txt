@@ -1,0 +1,9 @@
+USE business;
+SELECT * FROM emp;
+
+
+USE business;
+SELECT ename,job FROM emp;
+
+
+SELECT * FROM `business`.`emp`;

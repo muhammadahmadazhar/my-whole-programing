@@ -1,0 +1,9 @@
+from django.http import HttpResponse
+def index(request):
+    return HttpResponse("hello")
+
+def about(request):
+    return HttpResponse("about harry bhai")
+
+def webLink(request):
+    return HttpResponse('''<h1>Ahmad</h1> <a href="">click</a>''')

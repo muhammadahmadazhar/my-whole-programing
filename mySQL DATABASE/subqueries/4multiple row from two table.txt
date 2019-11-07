@@ -1,0 +1,3 @@
+SELECT ename,job,sal FROM emp WHERE 
+deptno IN (SELECT deptno FROM dep WHERE 
+loc IN ('china','mexico','germany')); 

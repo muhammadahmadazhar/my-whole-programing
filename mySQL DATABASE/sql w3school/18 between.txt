@@ -1,0 +1,1 @@
+SELECT * FROM  emp WHERE sal BETWEEN '2000' AND '5000' AND job NOT IN ('manager', 'clerk');

@@ -1,0 +1,10 @@
+SELECT CONCAT('HELLO','WORLD') FROM dual;
+SELECT SUBSTR('HELLOWORLD',1,5) FROM dual;
+SELECT LENGTH('HELLOWORLD') FROM dual;
+SELECT INSTR('HELLOWORLD','W') FROM dual;
+SELECT LPAD(salary,10,'*') FROM employees;
+SELECT RPAD(salary,10,'*') FROM employees;
+SELECT TRIM('H' FROM 'HELLOWORLD') FROM dual;
+
+SELECT employee_id,CONCAT(first_name,last_name),job_id,LENGTH(last_name),
+INSTR(last_name,'a') "contains a" FROM employees WHERE  SUBSTR(job_id,4)='REP';

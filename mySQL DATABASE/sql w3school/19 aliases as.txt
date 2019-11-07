@@ -1,0 +1,4 @@
+SELECT ename,job AS DETAILS FROM `emp` WHERE 1
+
+
+SELECT ename, CONCAT( job ,' , ', sal) AS details FROM `emp` WHERE 1

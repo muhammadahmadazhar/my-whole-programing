@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forms</title>
+</head>
+<body>
+      <form action="" name="myform" id="myformid">
+      	Username:<input type="text" name="mUsername" id="usernameid"><small id="sm"></small><br>
+      	<input type="submit" name="" value="Submit"><br><br>
+      </form>
+
+      <script type="text/javascript">
+        function validate(){
+          var ptr=/^([^0-9/w]*)$/;
+          if(ptr.test(document.myform.mUsername.value)){
+            document.getElementById('sm').textContent="";
+            document.myform.mUsername.style.backgroundColor="green";
+          }else{
+            document.getElementById('sm').textContent="invalid vormate";
+            document.myform.mUsername.style.backgroundColor="red";
+                }
+        }
+
+        document.myform.mUsername.addEventListener('keyup',validate);
+      </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+print("first make empty file and then write")
+f=open("harry1.txt", "w")
+f.write("harry bhai achay ha")
+f.close()
+
+print("appending in a file")
+f=open("harry1.txt", "a")
+f.write(" THANK YOU")
+f.close()
+
+print("read and write")
+f=open("harry1.txt", "r+")
+f.write(" WELLCOME")
+print(f.read())
+f.close()

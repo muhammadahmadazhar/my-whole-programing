@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>example of document fragment</title>
+</head>
+<body>
+     <div id="mydiv">
+     	<h1>we are learning javascript</h1>
+     </div>
+     <script type="text/javascript">
+     	var df=document.createDocumentFragment();
+     	var elNode=document.createElement("h2");
+     	var tNode=document.createTextNode("i am text of h2");
+     	var elNode1=document.createElement("p");
+     	var tNode1=document.createTextNode("i am text of p");
+
+        var h1Node=document.createElement("h1");
+        h1Node.textContent="i am new h1 heading";
+        df.appendChild(h1Node);
+        
+     	df.appendChild(elNode);
+     	elNode.appendChild(tNode);
+     	df.appendChild(elNode1);
+     	elNode1.appendChild(tNode1);
+
+     	
+
+        var mydiv=document.getElementById("mydiv");
+        mydiv.appendChild(df);
+
+
+     </script>
+</body>
+</html>

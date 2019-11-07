@@ -1,0 +1,3 @@
+SELECt ename,depname,sal FROM `emp`,`dep`
+ WHERE sal BETWEEN 2000 AND 5000 AND loc='shikago'
+ AND `emp`.`deptno` = `dep`.`depno`;

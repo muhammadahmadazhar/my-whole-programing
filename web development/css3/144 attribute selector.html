@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div[class]{ color: green; }
+		div[id=i1]{ color: blue; }
+		h3[class~=game]{ color: yellow; }
+		h3[class|=super]{ color: red; }
+		h4[class^=su]{color: orange;}
+		h5[class$=me]{color:blueviolet;}
+            h6[class*=er]{color:cyan;}
+	</style>
+</head>
+<body>
+      <div id="i1">this is 1st div</div>
+      <div class="c1">this is second div</div>
+      <h3 class="game">this is game heading</h3>
+      <h3 class="supergame">this is supergame heading</h3>
+      <h3 class="game supergame">this is game supergame heading</h3>
+      <h3 class="super">this is super heading</h3>
+      <h3 class="super-game">this is super-game heading</h3>
+      <h4 class="supergame">this is supergame heading</h4>
+      <h4 class="super-game">this is super-game heading</h4>
+      <h5 class="supergame">this is supergame heading</h5>
+      <h5 class="super-game">this is super-game heading</h5>
+      <h6 class="supergame">this is supergame heading</h6>
+      <h6 class="super-game">this is super-game heading</h6>
+</body>
+</html>

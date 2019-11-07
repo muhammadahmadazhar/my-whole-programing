@@ -1,0 +1,2 @@
+select job_id from job_history;
+select distinct job_id from job_history;

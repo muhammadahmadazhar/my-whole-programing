@@ -1,0 +1,22 @@
+CREATE USER batman IDENTIFIED BY batman
+DEFAULT TABLESPACE users TEMPORARY TABLESPACE temp
+QUOTA 20M ON users
+ACCOUNT UNLOCK;
+CREATE USER ironman IDENTIFIED BY ironman
+DEFAULT TABLESPACE users TEMPORARY TABLESPACE temp
+QUOTA 20M ON users
+ACCOUNT UNLOCK;
+
+without this privilege user can not logon but user is already created
+but not able to open his account
+GRANT CREATE SESSION TO batman;
+GRANT CREATE TABLE TO batman;
+
+multiple privileges TO batman simultaneously
+GRANT create synonym,create view,create sequence TO batman;
+
+privileg to multiple users simultaneously
+GRANT create procedure TO batman,ironman;
+with admin option he also grant this privilege to everyone
+GRANT create trigger TO batman WITH ADMIN OPTION;
+GRANT create session TO batman WITH ADMIN OPTION;

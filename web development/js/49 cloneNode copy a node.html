@@ -1,0 +1,32 @@
+n<!DOCTYPE html>
+<html>
+<head>
+	<title>cloneNode</title>
+</head>
+<body>
+      <h1>We are learning JS</h1>
+      <ul id="myul">
+                  <li>DJango</li>
+                  <li>JQuery</li>
+                  <li>Angular JS</li>
+                  <li>React JS</li>
+      </ul>
+      <div id="mydiv">
+      	
+      </div>
+      
+      
+      <script type="text/javascript">
+       var u=document.getElementById("myul");
+       //copying only element
+       var copyNode=u.cloneNode(false);
+       console.log(copyNode);
+       //copying element and childNodes
+       var copyNode=u.cloneNode(true);
+       console.log(copyNode);
+
+       var div=document.getElementById("mydiv");
+       div.appendChild(copyNode);
+      </script>
+</body>
+</html>

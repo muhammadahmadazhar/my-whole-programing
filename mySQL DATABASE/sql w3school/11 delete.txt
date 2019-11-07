@@ -1,0 +1,2 @@
+USE business;
+DELETE FROM emp WHERE id='17';

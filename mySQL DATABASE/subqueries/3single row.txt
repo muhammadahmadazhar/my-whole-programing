@@ -1,0 +1,3 @@
+SELECT ename,job,sal FROM emp WHERE 
+empno=(SELECT empno FROM emp WHERE  id='9')
+AND sal>(SELECT sal FROM emp WHERE comm='300');

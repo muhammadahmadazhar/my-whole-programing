@@ -1,0 +1,14 @@
+SELECT SUBSTR('WWW.RebellionRider.com',5,14) FROM dual;
+
+when start_position is greater than string it returns null
+SELECT SUBSTR('WWW.RebellionRider.com',23,14) FROM dual;
+
+when substr length is greater than the string the result is from
+start_position to end of string (RebellionRider.com)
+SELECT SUBSTR('WWW.RebellionRider.com',5,23) FROM dual;
+
+when substr is number then result=9993
+SELECT SUBSTR(50000-7,2,4) FROM dual;
+
+when substr is sysdate then result is NOV
+SELECT SUBSTR(SYSDATE,4,3) FROM dual;

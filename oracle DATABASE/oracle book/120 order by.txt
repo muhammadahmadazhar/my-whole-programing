@@ -1,0 +1,9 @@
+SELECT last_name,job_id,department_id,hire_date FROM employees ORDER BY hire_date;
+
+SELECT last_name,job_id,department_id,hire_date FROM employees ORDER BY hire_date DESC;
+
+sorting by column Alias
+SELECT employee_id,last_name,salary*12 ANSAL FROM employees ORDER BY ANSAL;
+
+sorting by multiple column
+SELECT last_name,department_id,salary FROM employees ORDER BY department_id,salary DESC;

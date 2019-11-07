@@ -1,0 +1,8 @@
+create table duplecate2emp as 
+(select * from emp where 1>2);
+
+insert into duplicate2emp
+(select * from emp where job='manager');
+
+insert into duplicate2emp(ename,job,sal,deptno)
+(select ename,job,sal,deptno from emp where job='clerk');

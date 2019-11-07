@@ -1,0 +1,5 @@
+SELECT * 
+FROM emp 
+LEFT JOIN dep
+ON dep.deptno=emp.deptno 
+WHERE emp.job='manager';

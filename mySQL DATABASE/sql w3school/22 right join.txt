@@ -1,0 +1,5 @@
+SELECT * 
+FROM emp 
+RIGHT JOIN dep
+ON dep.deptno=emp.deptno 
+WHERE dep.deptno='40';
