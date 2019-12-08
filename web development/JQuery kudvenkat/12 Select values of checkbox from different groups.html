@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.4.1.js"></script>
+    <script>
+      $(document).ready(function(){
+          // $('#btnGetSelectedSkills').click(function(){
+            $('input[name="skills"]').click(function(){
+              getCheckedCheckBoxes('skills')
+           });
+         //  $('#btnGetSelectedCities').click(function(){
+            $('input[name="cities"]').click(function(){
+              getCheckedCheckBoxes('cities')
+           });
+
+           var getCheckedCheckBoxes = function(groupName){
+           var result = $('input[name="'+groupName+'"]:checked');
+               if(result.length>0){
+                   var resultStr=result.length + "chekbox checked <br/>";
+                   result.each(function(){
+                       resultStr += $(this).val() + "<br/>"
+                   })
+                   $('#div'+groupName).html(resultStr);
+               }else{
+                   $('#div'+groupName).html('No checkbox is checked');
+               }
+           }  
+       });
+    </script>
+
+</head>
+<body>
+    Skills :
+    <input type="checkbox" name="skills" value="JavaScript" />JavaScript
+    <input type="checkbox" name="skills" value="jQuery" />jQuery
+    <input type="checkbox" name="skills" value="C#" />C#
+    <input type="checkbox" name="skills" value="VB" />VB
+    <input id="btnGetSelectedSkills" type="submit" value="Get Selected Skills" />
+    <br /><br />
+    Preferred Cities :
+    <input type="checkbox" name="cities" value="New York" />New York
+    <input type="checkbox" name="cities" value="New Delhi" />New Delhi
+    <input type="checkbox" name="cities" value="London" />London
+    <input id="btnGetSelectedCities" type="submit" value="Get Selected Cities" />
+    <br /><br />
+    <br /><br />
+    <div id="divskills">
+    </div>
+
+    <div id="divcities">
+    </div>
+</body>
+</html>

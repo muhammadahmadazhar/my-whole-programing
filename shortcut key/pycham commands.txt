@@ -1,0 +1,12 @@
+INDENT IN PYCHARM ONE LINE=TAB
+OUTDENT IN PYCHARM ONE LINE= SHIFT TAB
+INDENT MULTIPLE LINES SELECTED LINES=ctrl-alt-i
+TO CHECK WHERE WHERE THIS SELECTED VARIABLE IN FILE=ctrl-f
+
+ select multiple code rows to comment and press keyshot Ctrl + / to comment all of them
+
+pycharm shortcut keys
+ctrl [ to move left
+ctrl ] to move right
+ctrl d change all instance at once F2
+ctrl / comment 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.4.1.js"></script>
+    <script>
+        /*$('[title]') // Selects all elements that have title attribute
+        $('div[title]') // Selects all div elements that have title attribute
+        $('[title="divTitle"]') // Selects all elements that have title attribute value - divTitle
+        $('div[title="divTitle"]') // Selects all div elements that have title attribute value - divTitle
+        */
+
+        $(document).ready(function () {
+            //$('[title]').css('border', '5px solid red');
+            //$('div[title]').css('border', '5px solid red');
+            $('[title="div1Title"]').css('border', '5px solid red');
+            //$("[title=\"div1Title\"]").css('border', '5px solid red');
+
+ //Selects all div elements with both title and style attributes, and sets 5px solid black border
+           // $('div[title][style]').css('border', '5px solid yellow');
+            //$('div[title],[style]').css('border', '5px solid yellow');
+            $('div[title="divTitle"][style="background-color:green"]').css('border', '5px solid orange');
+        });
+    </script>
+</head>
+
+<body>
+    <div title="div1Title">
+        DIV 1
+    </div>
+    <br />
+    <div title="div2Title">
+        DIV 2
+    </div>
+    <p title="pTitle">
+        This is a paragraph
+    </p>
+    <span title="div1Title">
+        SAPN 1
+    </span>
+    <br /><br />
+    <span>
+        SPAN 2
+    </span>f
+
+    <h1>2nd example</h1>
+    <div title="divTitle" style="background-color:red">
+    Red DIV
+    </div>
+    <br />
+    <div title="divTitle" style="background-color:green">
+    Green DIV
+    </div>
+    <br />
+    <div title="divTitle">
+    Normal Div
+    </div>
+    <br />
+    <div>
+    Normal Div without any attributes
+    </div>
+</body>
+
+</html>

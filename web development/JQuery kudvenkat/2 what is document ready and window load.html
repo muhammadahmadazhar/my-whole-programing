@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+    $(window).ready(function(){
+        alert("window loaded");
+        $('#d1').html("Height="+$('#i1').height()+"Width="+$('#i1').width());
+        /*this fires when document DOM(html & css and also images videos frames) is full loaded ever button code is after is js*/
+    });
+
+    $(document).ready(function(){
+        
+        /*this fires when document DOM(html & css) is full loaded ever button code is after is js*/
+    });
+    </script>
+</head>
+<body>
+    <div id="d1">
+    <img id="i1" src="d2.jpg" alt="image">
+    </div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+username=mysql
+root password=mysql
+password=mysql

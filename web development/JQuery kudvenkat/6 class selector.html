@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            //  $('.small').css('background-color','red');// Selects all elements with class small
+            $('.small,.big').css('background-color', 'red');// Selects all elements with class small or big
+            $('span.big').css('background-color', 'green');// Selects div elements with class small and any element with class big
+
+
+            //second example code
+            //Selects all elements with class small that are nested in a an element with id=div2 and sets 5px solid red border
+            $('#div2 span.small').css('border', '5px solid orange');
+
+            //third example
+            //Selects all elements that has both the classes - small and big. There should be no space between the class names. 
+            $('.small.big').css('border', '5px solid green');
+
+            //4th example
+            //If you have a space between the two class names then we are trying to find descendants, i.e. find elements with class big that are descendants of an element with class small.
+            $('.small .big').css('border', '5px solid blue');
+
+            //filter method
+            //Another way to selects all elements that has both the classes - small and big is by using filter method. But this approach is slower because it will first create a list of objects with class "small" and then removes elements that does not have class "big"
+            
+            //$('.small').filter('.big').css('border', '5px solid red');
+
+        });
+    </script>
+</head>
+
+<body>
+    <span class="small">
+        Span 1
+    </span>
+    <br /><br />
+    <div class="small">
+        Div 1
+    </div>
+    <br />
+    <span class="big">
+        Span 2
+    </span>
+    <p class="big">This is a paragraph</p>
+
+    <h1>second Example</h1>
+    <div id="div1" class="small">
+        DIV 1
+    </div>
+    <br />
+    <div id="div2">
+        Div 2
+        <br />
+        <div class="small">
+            DIV 3
+        </div>
+        <br />
+        <span class="small">
+            SPAN
+        </span>
+    </div>
+
+    <h1>third example</h1>
+    <div class="small big">
+    DIV 1
+    </div>
+    <br />
+    <div class="small">
+    DIV 2
+    </div>
+
+    <h2>4th example</h2>
+    <div class="small big">
+        DIV 1
+    </div>
+    <br />
+    <div class="small">
+        DIV 2
+        <div class="big">
+            DIV 3
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.4.1.js"></script>
+    <script>
+    $(document).ready(function(){
+//Selects all elements that have title attribute value not equal to div1Title
+       // $('div[title!="div1Title"]').css('border','5px solid green');
+
+//Selects all elements that have title attribute value containing the given substring - Title
+       // $('[title*="Title"]').css('border','5px solid green');
+
+//Selects all elements that have title attribute value containing the given word - mySpan, delimited by spaces
+      //  $('[title~="mySpan"]').css('border','5px solid orange');
+
+//  Selects all elements that have title attribute value equal to myTitle or starting with myTitle followed by a hyphen (-)
+       // $('[title|="myTitle"]').css('border','5px solid orange');
+
+//Selects all elements that have title attribute value starting with div
+      //  $('[title^="div"]').css('border','5px solid orange');
+      
+//Selects all elements that have title attribute value ending with Heading
+        $('[title$="Heading"]').css('border','5px solid blue');
+    });
+    </script>
+</head>
+<body>
+    <div title="div1Title">
+        DIV 1
+    </div>
+    <br />
+    <div title="div2Title">
+        DIV 2
+    </div>
+    <p title="myTitle-paragraph">
+        This is a paragraph
+    </p>
+    <p title="myTitleHeading">
+        This is a paragraph
+    </p>
+    <span title="div1Title">
+        SAPN 1
+    </span>
+    <br /><br />
+    <span title="Heading mySpan">
+        SPAN 2
+    </span>
+</body>
+</html>

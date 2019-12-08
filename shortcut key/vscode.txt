@@ -1,0 +1,6 @@
+auto indent = Shift+Alt+F
+indent selected lines right=TAB
+indent selected lines left=Shift+TAB
+comment selected lines=ctrl + (k,c)simultaneously
+uncomment selected lines= Ctrl+ (K+U)simultaneously
+select occurence of variable one by one=double click variable then press CTRL+D

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.4.1.js"></script>
+    <script>
+      $(document).ready(function(){
+          // $('#btnGetSelectedSkills').click(function(){
+            $('input[name="skills"]').click(function(){
+              getCheckedCheckBoxes('skills')
+           });
+         //  $('#btnGetSelectedCities').click(function(){
+            $('input[name="cities"]').click(function(){
+              getCheckedCheckBoxes('cities')
+           });
+
+           var getCheckedCheckBoxes = function(groupName){
+           var result = $('input[name="'+groupName+'"]:checked');
+               if(result.length>0){
+                   var resultStr=result.length + "checkbox checked <br/>";
+                   result.each(function(){
+                       var selectedValue =$(this).val();
+                       resultStr += selectedValue+"-"+$('label[for="cb-'+selectedValue+'"]').text() + "<br/>";
+                   });
+                   $('#div'+groupName).html(resultStr);
+               }else{
+                   $('#div'+groupName).html('No checkbox is checked');
+               }
+           }  
+       });
+    </script>
+
+</head>
+<body>
+    Skills :
+    <input type="checkbox" name="skills" value="js" />
+    <label for="cb-js">JavaScript</label>
+    <input type="checkbox" name="skills" value="jq" />
+    <label for="cb-jq">jQuery</label>
+    <input type="checkbox" name="skills" value="cs" />
+    <label for="cb-cs">C#</label>
+    <input type="checkbox" name="skills" value="vb" />
+    <label for="cb-vb">VB</label>
+    <br /><br />
+    Preferred Cities :
+    <input type="checkbox" name="cities" value="ny" />
+    <label for="cb-ny">New York</label>
+    <input type="checkbox" name="cities" value="nd" />
+    <label for="cb-nd">New Delhi</label>
+    <input type="checkbox" name="cities" value="ln" />
+    <label for="cb-ln">London</label>
+    <br /><br />
+    Selected Skills:<br />
+    <div id="divskills"></div>
+    <br />
+    Selected Cities:<br />
+    <div id="divcities"></div>
+</body>
+</html>

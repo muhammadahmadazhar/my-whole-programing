@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.4.1.js"></script>
+    <script>
+        // $(document).ready(function(){
+        //     $('#selectCountries').change(function(){
+        //        var selectedOption = $('#selectCountries option:selected');
+        //        $('#divResult').html("value= "+selectedOption.val()+" "+"text= "+selectedOption.text());
+        //     });
+        // });
+
+        $(document).ready(function(){
+            $('#selectCountries').change(function(){
+                var selectedOptions= $('#selectCountries option:selected');
+                if(selectedOptions.length>0){
+                    var resultString='';
+                    selectedOptions.each(function(){
+                        resultString += 'value='+$(this).val()+" "+'text='+$(this).text()+"<br/>";
+                    });
+                    $('#divResult').html(resultString);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    Country:
+    <select id="selectCountries" multiple="multiple"><!--to check first example remove multiople-->
+        <option selected="selected" value="USA">United States</option>
+        <option value="IND">India</option>
+        <option value="UK">United Kingdom</option>
+        <option value="CA">Canada</option>
+        <option value="AU">Australia</option>
+    </select>
+    <br /><br />
+    <div id="divResult"></div>
+
+</body>
+</html>

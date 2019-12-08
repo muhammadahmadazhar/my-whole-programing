@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <table id="table1" border="1" cellpadding="30">
+        <tr>
+            <td rowspan="2"></td>
+            <th colspan="3">Fruit juice Drinks</th>
+        </tr>
+        <tr>
+            <th>Apple</th>
+            <th>Orange</th>
+            <th>ScrewDriver</th>
+        </tr>
+        <tr>
+            <th>Breakfast</th>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>Lunch</th>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>Dinner</th>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+    </table>
+         <div>
+             div
+         </div>
+         <div><span>span</span></div>
+         <a href="test.html">click me</a>
+    <script>
+        /*$('td') // Selects all td elements
+        $('div a') // Select all anchor elements that are descendants of div element
+        $('div, span, a') // Selects all div, span and anchor elements*/
+        $(document).ready(function () {
+            alert($('td').length);
+            $('tr').css('background-color','red');
+           // $('#table1 tr:even').css('background-color','orange');
+            $('tr:odd').css('background-color','orange');
+            
+           /* $('table tr').each(function(){
+              alert($(this).html());
+            });*/
+            $('div,a').css('background-color','yellow');
+            $('div span').css('background-color','red');
+        });
+    </script>
+</body>
+
+</html>
