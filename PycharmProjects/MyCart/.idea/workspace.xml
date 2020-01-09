@@ -4,15 +4,16 @@
     <list default="true" id="02b3395a-7faf-4565-a82c-5b7766964b7f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mac/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mac/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mac/shop/images/a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mac/mac/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mac/mac/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mac/shop/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mac/shop/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mac/shop/templates/shop/basic.html" beforeDir="false" afterPath="$PROJECT_DIR$/mac/shop/templates/shop/basic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mac/shop/templates/shop/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/mac/shop/templates/shop/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mac/shop/templates/shop/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/mac/shop/templates/shop/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mac/shop/templates/shop/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mac/shop/templates/shop/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mac/shop/templates/shop/productview.html" beforeDir="false" afterPath="$PROJECT_DIR$/mac/shop/templates/shop/productview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mac/shop/templates/shop/tracker.html" beforeDir="false" afterPath="$PROJECT_DIR$/mac/shop/templates/shop/tracker.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mac/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mac/shop/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mac/shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mac/shop/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../java programs/data structure java/recursion/1towerOfHanoi/build/classes/towerofhanoi/Toh.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../java programs/data structure java/recursion/1towerOfHanoi/build/classes/towerofhanoi/Toh.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../java programs/data structure java/recursion/1towerOfHanoi/build/classes/towerofhanoi/TowerOfHanoi.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../java programs/data structure java/recursion/1towerOfHanoi/build/classes/towerofhanoi/TowerOfHanoi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../java programs/data structure java/recursion/1towerOfHanoi/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../java programs/data structure java/recursion/1towerOfHanoi/nbproject/private/private.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../java programs/data structure java/recursion/1towerOfHanoi/src/towerofhanoi/TowerOfHanoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java programs/data structure java/recursion/1towerOfHanoi/src/towerofhanoi/TowerOfHanoi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../java programs/java lectures/25interfaces/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../java programs/java lectures/25interfaces/nbproject/private/private.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../web development/html/lab/lab0.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
