@@ -3,6 +3,53 @@
 {% block title %} CheckOut title {% endblock %}
 
 {% block body %}
-<h1>i am CheckOut </h1>
 
+<div class="container">
+    <div class="col my-4">
+        <h1>Step 1 - EBuyZone Checkout - Review Your Cart Items</h1>
+        <div class="my-4">
+            <ul class="list-group" id="items">
+
+            </ul>
+
+        </div>
+    </div>
+    
+
+    
+</div>
+
+{% endblock %}
+
+
+{% block js %}
+<script>
+
+    if (localStorage.getItem('cart') == null) {
+        var cart = {};
+    }
+    else {
+        cart = JSON.parse(localStorage.getItem('cart'));
+    }
+    sum = 0;
+    if ($.isEmptyObject(cart)) {
+        // if object is Empty
+        myStr = `<b style="color:red;font-size:35px;">Your cart is empty, Please add some items to your cart before checking out!</b>`;
+        $('#items').append(myStr);
+    }
+    else {
+        for (var item in cart) {
+            let qty = cart[item][0];
+            let name = cart[item][1];
+            sum = sum + qty;
+            myStr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${name}
+                    <span class="badge badge-primary badge-pill">${qty}</span>
+                </li>`;
+            $('#items').append(myStr);
+        }
+    }
+    document.getElementById('cart').innerHTML = sum;
+
+</script>
 {% endblock %}
