@@ -1,0 +1,19 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %} ThankYou title {% endblock %}
+
+{% block body %} 
+<h1>Thanks for ordering with us.Your order id is {{id}}.Use it to track your order using our order tracker</h1> <hr>
+<a href="/shop/tracker/">TRACK YOUR ORDER</a> <hr>
+<h1>{{items_json}}</h1>
+{% endblock %}
+
+
+{% block js %}
+<script>
+    {% if thanks %}
+         localStorage.clear();
+    {% endif %}
+    
+</script>
+{% endblock %}

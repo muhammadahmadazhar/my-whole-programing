@@ -49,10 +49,13 @@ padding-right: 0px;
 {% block body %}
 
 {% load static%}
+<button id="popcart" type="button" class="btn btn-success sticky-top float-right" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="NO ITEM IN CART">
+        cart(<span id="cart">0</span>)
+    </button>
 
 <div class="container">
     {% for product,range,nSlides in allProds%}
-    <h1>{{product.0.category}}</h1>
+    <h2>{{product.0.category}}</h2>
     <div class="row">
         <div id="demo{{forloop.counter}}" class="col carousel slide my-3" data-ride="carousel">
 
@@ -121,6 +124,14 @@ padding-right: 0px;
         cart = JSON.parse(localStorage.getItem('cart'));
         updateCart(cart);
     }
+    //TO CHECK IF CART OBJECT IS EMPTY OR NOT
+    function isEmpty(cart) {
+        for (var key in cart) {
+            if (cart.hasOwnProperty(key))
+                return false;
+        }
+        return true;
+    }
     // if AddToCArt button is clicked, add/increment the item
     // $('.cart').click(function () {
     $('.divpr').on('click', 'button.cart', function () {
@@ -129,29 +140,12 @@ padding-right: 0px;
             qty = cart[idstr][0] + 1;
         }
         else {
-            qty  = 1;
-            name = document.getElementById('name'+idstr).innerHTML;
-            cart[idstr] = [qty,name];
+            qty = 1;
+            name = document.getElementById('name' + idstr).innerHTML;
+            cart[idstr] = [qty, name];
         }
-        console.log(cart[idstr]);
         updateCart(cart);
     });
-    // add popover to cart
-    $('#popcart').popover();
-    updatePopover(cart);
-    function updatePopover(cart) {
-        var popStr = "";
-        popStr = popStr + "<h5> Cart for your items in my shopping cart </h5><div class='mx-2 my-2'>";
-        var i = 1;
-        for (var item in cart) {
-            popStr = popStr + "<b>" + i + ".</b> ";
-            popStr = popStr + document.getElementById('name' + item).innerHTML.slice(0, 15) + "... <b>Qty:</b> " + cart[item][0] + '<br>';
-            i = i + 1;
-        }
-        popStr = popStr + "</div> <a href='/shop/checkout'><button class='btn btn-primary' id ='checkout'>Checkout</button></a> <button class='btn btn-primary' onclick='clearCart()' id ='clearCart'>Clear Cart</button>     ";
-        document.getElementById('popcart').setAttribute('data-content', popStr);
-        $('#popcart').popover('show');
-    }
 
     function clearCart() {
         cart = JSON.parse(localStorage.getItem('cart'));
@@ -162,6 +156,32 @@ padding-right: 0px;
         cart = {};
         updateCart(cart);
     }
+
+    // add popover to cart
+    $('#popcart').popover();
+    updatePopover(cart);
+    function updatePopover(cart) {
+        if (isEmpty(cart)) {
+            // Object is empty (Would return true in this example)
+            console.log("empty");
+        } else {
+            // Object is NOT empty 
+            console.log("Notempty");
+            var popStr = "";
+            popStr = popStr + "<h5> Cart for your items in my shopping cart </h5><div class='mx-2 my-2'>";
+            var i = 1;
+            for (var item in cart) {
+                popStr = popStr + "<b>" + i + ".</b> ";
+                popStr = popStr + document.getElementById('name' + item).innerHTML.slice(0, 15) + "... <b>Qty:</b> " + cart[item][0] + '<br>';
+                i = i + 1;
+            }
+            popStr = popStr + "</div> <a href='/shop/checkout' class='btn btn-primary' id ='checkout'>Checkout</a> ";
+            document.getElementById('popcart').setAttribute('data-content', popStr);
+            $('#popcart').popover('show');
+        }
+
+    }
+
 
 
     function updateCart(cart) {
@@ -194,6 +214,6 @@ padding-right: 0px;
         updateCart(cart);
     })
 
-
+    
 </script>
 {% endblock %}
