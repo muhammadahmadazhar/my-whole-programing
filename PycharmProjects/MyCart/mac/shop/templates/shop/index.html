@@ -4,18 +4,23 @@
 
 {% block css %}
 
+
 .col-md-3{
 display: inline-block;
 margin-left:-4px;
+height:300px;
 }
 
 .col-md-3 img{
-max-width:450px;
-max-height:200px;
+<!--max-width:450px;-->
+width:350px;
+height:150px;
+<!--min-height:200px;-->
 }
 
 .carousel-indicators .active {
-background-color: blue;
+background-color: red;
+width:50px; height:5px;
 }
 
 body .carousel-indicator li{
@@ -36,7 +41,7 @@ height: 60px;
 .carousel-control-next{
 top: auto;
 bottom: auto;
-padding-top: 222px;
+padding-top: 120px;
 }
 
 body .no-padding{
@@ -49,15 +54,17 @@ padding-right: 0px;
 {% block body %}
 
 {% load static%}
-<button id="popcart" type="button" class="btn btn-success sticky-top float-right" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="NO ITEM IN CART">
-        cart(<span id="cart">0</span>)
-    </button>
+<button id="popcart" type="button" class="btn btn-success sticky-top float-right" data-container="body"
+    data-toggle="popover" title="<b>Items in Shopping Cart</b>" data-placement="bottom" data-html="true" data-content="<b>NO ITEM IN CART</b>">
+    Cart(<span id="cart">0</span>)
+</button>
+
 
 <div class="container">
     {% for product,range,nSlides in allProds%}
-    <h2>{{product.0.category}}</h2>
+    <h3>{{product.0.category}}</h3>
     <div class="row">
-        <div id="demo{{forloop.counter}}" class="col carousel slide my-3" data-ride="carousel">
+        <div id="demo{{forloop.counter}}" class="col carousel slide my-1"  data-ride="carousel">
 
             <ul class="carousel-indicators">
                 <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
@@ -73,17 +80,18 @@ padding-right: 0px;
 
                     {% for i in product %}
                     <div class="col-sm-3 col-md-3 col-lg-3">
-                        <div class="card align-items-center" style="width: 13rem;">
+                        <div class="card align-items-center" style="width: 14rem;">
                             <img src=' /media/{{i.image}} ' class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" id="namepr{{i.id}}">{{i.product_name}}</h5>
+                                <h6 class="card-title" id="namepr{{i.id}}">{{i.product_name|slice:":20"}}</h6>
 
-                                <p class="card-text">Rs.{{i.price}}</p>
+                                <div>Rs.
+                                    <p id="pricpr{{i.id}}" class="card-text" style="display: inline-block;">{{i.price}}</p>
 
-                                <span id="divpr{{i.id}}" class="divpr">
-                                    <button id="pr{{i.id}}" class="btn btn-primary cart">AddToCart</button>
-                                </span>
-
+                                    <span id="divpr{{i.id}}" class="divpr" >
+                                        <button id="pr{{i.id}}" class="btn btn-primary cart" style="display: inline-block;">Add Cart</button>
+                                    </span>
+                                </div>
                                 <!-- <a href="/shop/productview/{{i.id}}"> <button id="qv{{i.id}}"
                                         class="btn btn-primary cart">View</button></a> -->
                             </div>
@@ -138,11 +146,13 @@ padding-right: 0px;
         var idstr = this.id.toString();
         if (cart[idstr] != undefined) {
             qty = cart[idstr][0] + 1;
+            // price = cart[idstr][2] + document.getElementById('pric' + idstr).innerHTML;
         }
         else {
             qty = 1;
             name = document.getElementById('name' + idstr).innerHTML;
-            cart[idstr] = [qty, name];
+            price = document.getElementById('pric' + idstr).innerHTML;
+            cart[idstr] = [qty, name,price];
         }
         updateCart(cart);
     });
@@ -163,21 +173,21 @@ padding-right: 0px;
     function updatePopover(cart) {
         if (isEmpty(cart)) {
             // Object is empty (Would return true in this example)
-            console.log("empty");
         } else {
-            // Object is NOT empty 
-            console.log("Notempty");
             var popStr = "";
-            popStr = popStr + "<h5> Cart for your items in my shopping cart </h5><div class='mx-2 my-2'>";
-            var i = 1;
-            for (var item in cart) {
-                popStr = popStr + "<b>" + i + ".</b> ";
-                popStr = popStr + document.getElementById('name' + item).innerHTML.slice(0, 15) + "... <b>Qty:</b> " + cart[item][0] + '<br>';
-                i = i + 1;
-            }
-            popStr = popStr + "</div> <a href='/shop/checkout' class='btn btn-primary' id ='checkout'>Checkout</a> ";
+            popStr = popStr + "<div id=divt1 class='my-2'></div>";
+            popStr = popStr + "<div> <a href='/shop/checkout' class='btn btn-primary ' id ='checkout'>Checkout</a><a href='' class='btn btn-danger mx-2' id='clearCart'>Clear Cart</a> </div>";
             document.getElementById('popcart').setAttribute('data-content', popStr);
             $('#popcart').popover('show');
+            document.getElementById('divt1').innerHTML="<table class='table table-sm table-bordered' id='t1'><thead><tr><th scope='col'>ID</th><th scope='col'>Items</th><th scope='col'>Qty</th></tr></thead></table>";
+                 var c=1;
+            for (var item in cart){
+                var name=document.getElementById('name' + item).innerHTML.slice(0, 22);
+                var qty=cart[item][0];
+                trStr=`<tr><td><b>${c}</b></td><td>${name}</td><td>${qty}</td></tr>`;
+                $('#t1').append(trStr);
+                c++;
+            }
         }
 
     }
@@ -213,7 +223,8 @@ padding-right: 0px;
         updatePopover(cart);
         updateCart(cart);
     })
-
-    
+        $(document).on('click', '#clearCart', function(){
+  clearCart()
+    });
 </script>
 {% endblock %}

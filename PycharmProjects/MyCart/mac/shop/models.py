@@ -23,3 +23,12 @@ class Orders(models.Model):
     city = models.CharField(max_length=20)
     state = models.CharField(max_length=20)
     zip_code = models.CharField(max_length=30)
+
+class Contact(models.Model):
+    msg_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50, default="")
+    phone = models.CharField(max_length=13, default="")
+    desc = models.CharField(max_length=500, default="")
+    def __str__(self):
+        return self.name

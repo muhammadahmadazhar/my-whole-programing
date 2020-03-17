@@ -2,10 +2,20 @@
 
 {% block title %} ThankYou title {% endblock %}
 
-{% block body %} 
-<h1>Thanks for ordering with us.Your order id is {{id}}.Use it to track your order using our order tracker</h1> <hr>
-<a href="/shop/tracker/">TRACK YOUR ORDER</a> <hr>
-<h1>{{items_json}}</h1>
+{% block body %}
+
+<!--<h1>{{items_json}}</h1>-->
+<div class="jumbotron text-center">
+  <h1 class="display-3">Thank You!</h1>
+  <p style='font-size: 30px;' class="lead"><strong>Your order id is <span style='color: red; font: bold;'>{{id}}</span></strong> Use it to track your order using our order tracker.</p>
+  <hr>
+  <p class="lead">
+    <a class="btn btn-primary btn-sm" href="/shop/tracker/" role="button">TRACK YOUR ORDER</a>
+  </p>
+  <p>
+    Having trouble? <a href="/shop/contact">Contact us</a>
+  </p>
+</div>
 {% endblock %}
 
 
@@ -14,6 +24,7 @@
     {% if thanks %}
          localStorage.clear();
     {% endif %}
-    
+<!--    var obj = jQuery.parseJSON(items_json);-->
+<!--    console.log(typeof(obj));-->
 </script>
 {% endblock %}

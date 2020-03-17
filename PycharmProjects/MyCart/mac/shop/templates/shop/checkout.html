@@ -65,22 +65,27 @@
 <script>
 
     if (localStorage.getItem('cart') == null) {
-        var cart = {};
+                var cart = {};
     }
-    else {
+    else{
         cart = JSON.parse(localStorage.getItem('cart'));
     }
-    sum = 0;
+    sum = 0; pr=0;
     if ($.isEmptyObject(cart)) {
         // if object is Empty
+        window.location.href='/shop/';
         myStr = `<b style="color:red;font-size:35px;">Your cart is empty, Please add some items to your cart before checking out!</b>`;
         $('#items').append(myStr);
     }
     else {
+        let or = 0;
         for (var item in cart) {
             let qty = cart[item][0];
             let name = cart[item][1];
+            let price = cart[item][2];
             sum = sum + qty;
+            pr =price*qty; 
+            or=pr+or;
             myStr = `<li class="list-group-item d-flex justify-content-between align-items-center">
                     ${name}
                     <span class="badge badge-primary badge-pill">${qty}</span>
@@ -91,7 +96,12 @@
                     <h4>TOTAL PRODUCTS</h4>
                     <span class="badge badge-primary badge-pill">${sum}</span>
                 </li>`;
+        myPr1 = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    <h4>TOTAL PRICE</h4>
+                    <span class="badge badge-primary badge-pill">Rs.${or}</span>
+                </li>`;
         $('#items').append(myStr1);
+        $('#items').append(myPr1);
     }
    // document.getElementById('cart').innerHTML = sum;
 
