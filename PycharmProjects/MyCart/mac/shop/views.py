@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import product, Orders,Contact
+from .models import product, Orders,Contact,OrderUpdate
 from math import ceil
+import json
 # Create your views here.
 def index(request):
     # products = product.objects.all()
@@ -24,6 +25,31 @@ def index(request):
     params = {'allProds': allProds}
     return render(request,'shop/index.html',params)
 
+def searchMatch(query, item):
+    '''return True only if query matches item'''
+    if query in item.product_name.lower() or query in item.category.lower():
+        return True
+    else:
+        return False
+
+def search(request):
+    query = request.GET.get('search')
+    allProds = []
+    catProds = product.objects.values('category', 'id')
+    cats = {item['category'] for item in catProds}
+    for cat in cats:
+        prodtemp = product.objects.filter(category=cat)
+        prod = [item for item in prodtemp if searchMatch(query, item)]
+        n = len(prod)
+        nSlides = n // 4 + ceil((n / 4) - (n // 4))
+        if len(prod) != 0:
+            allProds.append([prod, range(1, nSlides), nSlides])
+
+    params = {'allProds': allProds, "msg":""}
+    if len(allProds) == 0 or len(query)<4:
+        params = {"msg":"Please make sure to enter relevant search query"}
+    return render(request, 'shop/search.html', params)
+
 def basic(request):
     return render(request,'shop/basic.html')
 
@@ -41,14 +67,31 @@ def contact(request):
     return render(request,'shop/contact.html')
 
 def tracker(request):
+    if request.method=="POST":
+        orderid = request.POST.get('orderID', '')
+        email = request.POST.get('inputEmail', '')
+        try:
+            order = Orders.objects.filter(order_id=orderid,email=email)
+            if len(order)>0:
+                update = OrderUpdate.objects.filter(order_id=orderid)
+                updates =[]
+                for item in update:
+                    updates.append({'text':item.update_desc, 'time':item.timestamp})
+                    response = json.dumps({"status":"success", "updates": updates, "itemsJson": order[0].items_json}, default=str)
+                    #If you have a Python object, you can convert it into a JSON string by using the json.dumps() method.
+                return HttpResponse(response)
+            else:
+                return HttpResponse('{"status":"noitem"}')
+        except Exception as e:
+            return HttpResponse('{"status":"error"}')
+
+
     return render(request,'shop/tracker.html')
 
-def search(request):
-    return render(request,'shop/search.html')
-
-def productview(request,id):
+def productview(request,myid):
     # fetch the product using the id
-    return render(request,'shop/productview.html')
+    products = product.objects.filter(id=myid)
+    return render(request,'shop/productview.html',{'products':products[0]})
 
 def checkout(request):
     if request.method == "POST":
@@ -63,10 +106,13 @@ def checkout(request):
         zip_code = request.POST.get('inputZip', '')
         order = Orders(items_json=items_json, name=name, email=email, address=address, phone=phone, city=city, state=state, zip_code=zip_code)
         order.save()
+        update = OrderUpdate(order_id=order.order_id,update_desc="The order has been placed")
+        update.save()
         id=order.order_id
         thanks = True
         return render(request, 'shop/thanks.html', {'thanks':thanks, 'id':id, 'items_json':items_json})
     return render(request,'shop/checkout.html')
 
 def thanks(request):
+
     return render(request, 'shop/thanks.html')
