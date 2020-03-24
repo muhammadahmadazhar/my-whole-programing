@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import product, Orders,Contact,OrderUpdate
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
 from math import ceil
 import json
 # Create your views here.
@@ -63,7 +66,12 @@ def contact(request):
         phone = request.POST.get('inputPhone', '')
         desc = request.POST.get('desc', '')
         contact = Contact(name=name,email=email,phone=phone,desc=desc)
-        contact.save()
+
+        if len(phone) < 10 or len(desc) < 50 or len(email) < 5:
+            messages.error(request,'INVALID CREDENTIALS, PLEASE TRY AGAIN')
+        else:
+            messages.success(request,'SUCCESSFULLY PLACED')
+            contact.save()
     return render(request,'shop/contact.html')
 
 def tracker(request):
@@ -114,5 +122,60 @@ def checkout(request):
     return render(request,'shop/checkout.html')
 
 def thanks(request):
-
     return render(request, 'shop/thanks.html')
+
+def handleSignup(request):
+    if request.method == 'POST':
+        #Get the post parameters
+        username= request.POST['username']
+        fname= request.POST['fname']
+        lname= request.POST['lname']
+        email= request.POST['email']
+        pass1= request.POST['pass1']
+        pass2= request.POST['pass2']
+
+        #Check for errorneous inputs
+        # username should be under 13 characters
+        if len(username) > 13:
+            messages.error(request,'USERNAME MUST BE UNDER 10 CHARACTERS')
+            return redirect('shophome')
+        # username should be alphanumeric
+        if not username.isalnum():
+            messages.error(request,'USERNAME SHOULD ONLY CONTAIN LETTERS AND NUMBERS')
+            return redirect('shophome')
+        # passwords should match
+        if pass1 != pass2 :
+            messages.error(request,'PASSWORDS DO NOT MATCH')
+            return redirect('shophome')
+
+        #Create the user
+        myUser = User.objects.create_user(username,email,pass2)
+        myUser.first_name = fname
+        myUser.last_name = lname
+        myUser.save()
+        messages.success(request,'YOUR ACCOUNT HAS BEEN SUCCESSFULLY CREATED')
+        return redirect('shophome')
+    else:
+        return HttpResponse('404 - NOT FOUND')
+
+def handleLogin(request):
+    if request.method == 'POST':
+        #Get the post parameters
+        loginUsername= request.POST['loginUsername']
+        loginPass= request.POST['loginPass']
+        user = authenticate(username=loginUsername, password=loginPass)
+        if user is not None:
+            login(request,user)
+            messages.success(request,'SUCCESSFULLY LOGED IN')
+            return redirect('shophome')
+        else:
+            messages.error(request,'INVALID CREDENTIALS, PLEASE TRY AGAIN')
+            return redirect('shophome')
+
+    return HttpResponse('404 - NOT FOUND')
+
+def handleLogout(request):
+    logout(request)
+    messages.success(request, 'SUCCESSFULLY LOGED OUT')
+    return redirect('shophome')
+
